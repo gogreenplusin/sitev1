@@ -1,0 +1,1919 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GoGreen+ | Go Green Plus</title>
+<meta name="description" content="Electric collection, urban cleaning and waste-to-resource solutions for cleaner, more responsible operations.">
+<meta name="theme-color" content="#0d3424">
+<meta property="og:title" content="GoGreen+ | Go Green Plus">
+<meta property="og:description" content="Electric collection, urban cleaning and waste-to-resource solutions for cleaner, more responsible operations.">
+<meta property="og:image" content="assets/img/products/segrego-cut.webp">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<style>
+@font-face { font-family: "Manrope"; font-style: normal; font-display: swap; font-weight: 200 800;
+  src: url("assets/fonts/manrope-latin-ext-wght-normal.woff2") format("woff2-variations"), url("assets/fonts/manrope-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Manrope"; font-style: normal; font-display: swap; font-weight: 200 800;
+  src: url("assets/fonts/manrope-latin-wght-normal.woff2") format("woff2-variations"), url("assets/fonts/manrope-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* ==========================================================================
+   GoGreen+ v2 — design system
+   Type: Manrope (one family; calm, premium geometric). Colour: emblem greens.
+   ========================================================================== */
+:root {
+  --ink: #10231a;
+  --ink-2: #3c4e44;
+  --ink-3: #6b7b71;
+  --canopy: #0d3424;
+  --canopy-2: #124330;
+  --canopy-3: #1b5a3f;
+  --leaf: #138a3e;
+  --leaf-press: #0e6f31;
+  --leaf-tint: rgba(19, 138, 62, .09);
+  --sprout: #a3d65f;
+  --mist: #f1f4ee;
+  --mist-2: #e7ede2;
+  --mist-3: #d8e1d2;
+  --paper: #ffffff;
+  --line: rgba(16, 35, 26, .09);
+  --line-strong: rgba(16, 35, 26, .16);
+  --on-dark: #edf4ea;
+  --on-dark-2: rgba(237, 244, 234, .72);
+  --on-dark-3: rgba(237, 244, 234, .5);
+  --line-dark: rgba(237, 244, 234, .13);
+
+  --s-wet: #138a3e; --s-dry: #2457c5; --s-sanitary: #c2412d; --s-recyclable: #c9900f;
+
+  --r-xl: 28px; --r-lg: 20px; --r-md: 14px; --r-sm: 11px;
+  --maxw: 1240px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --section: clamp(56px, 6vw, 88px);
+  --nav-h: 64px;
+  --nav-top: 14px;
+  --nav-space: calc(var(--nav-h) + var(--nav-top) + 20px);
+  --shadow-soft: 0 1px 2px rgba(16,35,26,.04), 0 12px 32px -18px rgba(16,35,26,.22);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: calc(var(--nav-space) + 8px); }
+body {
+  margin: 0; background: var(--mist); color: var(--ink);
+  font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px; line-height: 1.7; font-weight: 450; letter-spacing: -0.003em;
+  font-feature-settings: "ss01" 0, "cv11" 1;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; letter-spacing: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+h1, h2, h3, h4, p, figure, blockquote, ul, ol, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+:focus-visible { outline: 2px solid var(--leaf); outline-offset: 3px; border-radius: 8px; }
+.dark :focus-visible { outline-color: var(--sprout); }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: fixed; left: 12px; top: -60px; z-index: 300; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 10px; transition: top .2s; }
+.skip-link:focus { top: 12px; }
+
+/* ---------- type ---------- */
+.h1, .h2, .h3, .h4 { font-weight: 640; color: inherit; text-wrap: balance; }
+.h1 { font-size: clamp(34px, 3.9vw, 56px); line-height: 1.08; letter-spacing: -0.036em; font-weight: 620; }
+.h2 { font-size: clamp(27px, 2.6vw, 40px); line-height: 1.14; letter-spacing: -0.03em; font-weight: 620; }
+.h3 { font-size: clamp(18px, 1.35vw, 21px); line-height: 1.32; letter-spacing: -0.016em; }
+.h4 { font-size: 16.5px; line-height: 1.4; letter-spacing: -0.01em; }
+.lead { font-size: clamp(16px, 1.2vw, 18px); line-height: 1.7; color: var(--ink-2); max-width: 60ch; text-wrap: pretty; }
+.body { color: var(--ink-2); max-width: 68ch; text-wrap: pretty; }
+.small { font-size: 14px; line-height: 1.55; color: var(--ink-3); }
+.num { font-variant-numeric: tabular-nums; }
+.dark { color: var(--on-dark); }
+.dark .lead, .dark .body { color: var(--on-dark-2); }
+.dark .small { color: var(--on-dark-3); }
+
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; line-height: 1; font-weight: 650; color: var(--leaf);
+  padding: 8px 13px 8px 11px; border-radius: 999px; background: var(--leaf-tint); box-shadow: inset 0 0 0 1px rgba(19,138,62,.14); letter-spacing: .005em; }
+.eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 3px rgba(19,138,62,.16); }
+.dark .eyebrow { color: var(--sprout); background: rgba(163,214,95,.1); box-shadow: inset 0 0 0 1px rgba(163,214,95,.2); }
+.dark .eyebrow::before { box-shadow: 0 0 0 3px rgba(163,214,95,.18); }
+.eyebrow + .h1, .eyebrow + .h2 { margin-top: 18px; }
+.eyebrow { width: max-content; max-width: 100%; align-self: flex-start; }
+
+.link { display: inline-flex; align-items: center; gap: 8px; color: var(--leaf); font-weight: 650; font-size: 15px; }
+.link .i { width: 16px; height: 16px; transition: transform .3s var(--ease); }
+.link:hover .i { transform: translateX(3px); }
+.link.back:hover .i { transform: translateX(-3px); }
+.link span { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .35s var(--ease); padding-bottom: 2px; }
+.link:hover span { background-size: 100% 1px; }
+.dark .link { color: var(--sprout); }
+
+/* ---------- layout ---------- */
+.wrap { width: 100%; max-width: calc(var(--maxw) + var(--gutter) * 2); margin-inline: auto; padding-inline: var(--gutter); }
+.sec { position: relative; isolation: isolate; padding-block: var(--section); }
+.sec > .wrap, .hero > .wrap, .page-hero > .wrap { position: relative; z-index: 1; }
+.bg-paper { background: var(--paper); }
+.bg-mist2 { background: var(--mist-2); }
+.bg-dark { background: var(--canopy); color: var(--on-dark); }
+.head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px 64px; align-items: end; margin-bottom: clamp(32px, 3.6vw, 48px); }
+.head .lead { padding-bottom: 4px; }
+.head.solo { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 880px) { .head { grid-template-columns: 1fr; } }
+.stack > * + * { margin-top: 18px; }
+.mt-s { margin-top: 12px; } .mt-m { margin-top: 24px; } .mt-l { margin-top: 40px; }
+
+/* ---------- buttons ---------- */
+.btn { --h: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: var(--h); padding: 0 22px; border-radius: 13px;
+  font-weight: 650; font-size: 15px; letter-spacing: -0.008em; white-space: nowrap; position: relative;
+  transition: background-color .25s, color .25s, box-shadow .25s, transform .25s var(--ease); }
+.btn .i { width: 17px; height: 17px; }
+.btn:active { transform: translateY(1px) scale(.99); }
+.btn-primary { background: var(--leaf); color: #fff; box-shadow: 0 1px 0 rgba(255,255,255,.18) inset, 0 8px 20px -10px rgba(19,138,62,.7); }
+.btn-primary:hover { background: var(--leaf-press); }
+.btn-ghost { background: rgba(255,255,255,.55); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line-strong); backdrop-filter: blur(6px); }
+.btn-ghost:hover { background: var(--paper); box-shadow: inset 0 0 0 1px var(--ink-3); }
+.btn-light { background: var(--paper); color: var(--canopy); }
+.btn-light:hover { background: var(--mist-2); }
+.dark .btn-ghost { background: transparent; color: var(--on-dark); box-shadow: inset 0 0 0 1px rgba(237,244,234,.3); }
+.dark .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--on-dark); }
+.btn-ic { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; background: rgba(255,255,255,.18); margin-right: -8px; transition: transform .3s var(--ease); }
+.btn:hover .btn-ic { transform: translateX(2px); }
+.btn-s { --h: 42px; padding: 0 16px; font-size: 14.5px; border-radius: 11px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.i { width: 22px; height: 22px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ==========================================================================
+   Floating navigation
+   ========================================================================== */
+.nav-shell { position: fixed; z-index: 100; top: var(--nav-top); left: 0; right: 0; padding-inline: var(--gutter); pointer-events: none; }
+.progress { position: fixed; top: 0; left: 0; height: 2px; width: 100%; z-index: 120; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--leaf), var(--sprout)); pointer-events: none; }
+.nav-bar { pointer-events: auto; margin-inline: auto; max-width: var(--maxw); height: var(--nav-h); display: flex; align-items: center; gap: 16px; padding: 0 9px 0 12px;
+  border-radius: 20px; background: rgba(255,255,255,.66); -webkit-backdrop-filter: saturate(1.6) blur(18px); backdrop-filter: saturate(1.6) blur(18px);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 0 0 1px rgba(16,35,26,.07), 0 10px 30px -16px rgba(16,35,26,.28);
+  transition: max-width .5s var(--ease), background-color .35s, box-shadow .35s, height .35s; }
+.nav-shell.is-scrolled .nav-bar { max-width: 1120px; background: rgba(255,255,255,.84); box-shadow: inset 0 0 0 1px rgba(255,255,255,.8), 0 0 0 1px rgba(16,35,26,.08), 0 16px 40px -18px rgba(16,35,26,.35); }
+.brand { display: inline-flex; align-items: center; gap: 10px; flex: none; padding: 4px; border-radius: 12px; }
+.brand-badge { width: 38px; height: 38px; border-radius: 12px; background: var(--paper); display: grid; place-items: center; box-shadow: inset 0 0 0 1px var(--line); }
+.brand-badge img { width: 28px; }
+.brand-word { font-weight: 800; font-size: 16.5px; letter-spacing: -0.02em; color: var(--canopy); line-height: 1; }
+.brand-word sup { color: var(--leaf); font-size: .7em; top: -.5em; margin-left: 1px; }
+.dark .brand-word { color: var(--on-dark); }
+.dark .brand-word sup { color: var(--sprout); }
+
+.nav-track { position: relative; display: flex; align-items: center; gap: 2px; padding: 4px; border-radius: 14px; background: rgba(16,35,26,.045); margin-inline: auto; }
+.nav-glide { position: absolute; top: 4px; left: 0; height: calc(100% - 8px); width: 0; border-radius: 10px; background: var(--paper); box-shadow: 0 1px 2px rgba(16,35,26,.08), 0 4px 12px -6px rgba(16,35,26,.25);
+  transition: transform .45s var(--ease), width .45s var(--ease), opacity .25s; opacity: 0; pointer-events: none; }
+.nav-item { position: relative; }
+.nav-bar { position: relative; }
+#m-services { position: static; }
+#p-services { top: calc(100% + 10px); }
+.nav-a { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 5px; height: 38px; padding: 0 14px; border-radius: 10px; font-size: 14.5px; font-weight: 600; color: var(--ink-2); transition: color .25s; }
+.nav-a:hover, .nav-a[aria-current="page"], .nav-a[aria-expanded="true"] { color: var(--ink); }
+.nav-a .chev { width: 14px; height: 14px; stroke-width: 2; transition: transform .3s var(--ease); opacity: .6; }
+.nav-item.is-open .chev { transform: rotate(180deg); }
+.nav-actions { display: flex; align-items: center; gap: 6px; flex: none; }
+.nav-login { display: inline-flex; align-items: center; gap: 7px; height: 42px; padding: 0 12px; border-radius: 11px; font-size: 14.5px; font-weight: 600; color: var(--ink-2); transition: background-color .2s, color .2s; }
+.nav-login:hover { background: rgba(16,35,26,.05); color: var(--ink); }
+.nav-login .i { width: 18px; height: 18px; }
+.nav-actions .btn { --h: 44px; padding: 0 12px 0 16px; font-size: 14.5px; border-radius: 12px; }
+.nav-toggle { display: none; width: 44px; height: 44px; border-radius: 12px; place-items: center; margin-left: auto; background: rgba(16,35,26,.05); }
+
+.menu-panel { position: absolute; top: calc(100% + 16px); left: 50%; translate: -50% 0; opacity: 0; visibility: hidden; transform: translateY(-6px) scale(.985); transform-origin: top center;
+  background: #fff; border-radius: 20px;
+  box-shadow: 0 0 0 1px rgba(16,35,26,.07), 0 30px 60px -24px rgba(16,35,26,.35); padding: 10px; transition: opacity .25s var(--ease), transform .3s var(--ease), visibility .25s; }
+.nav-item.is-open .menu-panel { opacity: 1; visibility: visible; transform: none; }
+.mega { width: min(900px, 88vw); display: grid; grid-template-columns: 1.55fr 1fr; gap: 8px; }
+.mega h3 { font-size: 12.5px; font-weight: 650; color: var(--ink-3); margin: 8px 10px 6px; }
+.mega-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.m-item { display: grid; grid-template-columns: 58px 1fr; align-items: center; gap: 12px; padding: 8px; border-radius: 13px; transition: background-color .2s; }
+.m-item:hover { background: var(--mist); }
+.m-thumb { width: 58px; height: 44px; border-radius: 10px; background: var(--mist-2); overflow: hidden; display: grid; place-items: center; }
+.m-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+.m-thumb.photo img { object-fit: cover; padding: 0; }
+.m-item strong { font-size: 14.5px; font-weight: 650; line-height: 1.25; display: block; letter-spacing: -0.01em; }
+.m-item small { font-size: 12.5px; color: var(--ink-3); display: block; }
+.mega-side { border-radius: 15px; background: var(--canopy); color: var(--on-dark); padding: 14px; display: flex; flex-direction: column; gap: 6px; position: relative; overflow: hidden; isolation: isolate; }
+.mega-side h3 { color: var(--on-dark-3); margin: 0 0 4px; }
+.mega-side a.d { display: grid; grid-template-columns: 50px 1fr; gap: 10px; align-items: center; padding: 6px; border-radius: 11px; font-size: 14px; font-weight: 600; transition: background-color .2s; }
+.mega-side a.d:hover { background: rgba(255,255,255,.07); }
+.mega-side a.d img { width: 50px; height: 38px; object-fit: cover; border-radius: 8px; }
+.mega-side .btn { margin-top: auto; }
+.drop { width: 240px; display: grid; gap: 2px; }
+.drop a { display: flex; align-items: center; justify-content: space-between; padding: 11px 12px; border-radius: 11px; font-size: 14.5px; font-weight: 600; color: var(--ink-2); transition: background-color .2s, color .2s; }
+.drop a:hover { background: var(--mist); color: var(--ink); }
+.drop a .i { width: 15px; height: 15px; opacity: .45; }
+
+.drawer { position: fixed; inset: 0; z-index: 90; background: rgba(241,244,238,.97); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  padding: calc(var(--nav-space) + 4px) var(--gutter) 32px; overflow-y: auto; opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s; }
+.drawer.is-open { opacity: 1; visibility: visible; }
+.drawer .d-link { display: flex; justify-content: space-between; align-items: center; padding: 14px 4px; border-bottom: 1px solid var(--line); font-size: 21px; font-weight: 650; letter-spacing: -0.02em; }
+.drawer .d-link .i { width: 18px; height: 18px; opacity: .5; }
+.drawer .d-sub { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 16px; padding: 8px 4px 14px; border-bottom: 1px solid var(--line); }
+.drawer .d-sub a { padding: 6px 0; color: var(--ink-2); font-size: 14.5px; }
+.drawer .actions { margin-top: 22px; }
+.drawer .actions .btn { flex: 1; }
+
+@media (max-width: 1080px) {
+  .nav-track, .nav-actions { display: none; }
+  .nav-toggle { display: grid; }
+}
+
+/* ==========================================================================
+   Animated background shapes
+   ========================================================================== */
+.fx { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.fx > * { position: absolute; will-change: transform; }
+.blob { border-radius: 50%; filter: blur(48px); opacity: .55; animation: drift 24s ease-in-out infinite alternate; }
+.blob.g1 { background: radial-gradient(closest-side, rgba(163,214,95,.55), rgba(163,214,95,0)); }
+.blob.g2 { background: radial-gradient(closest-side, rgba(19,138,62,.32), rgba(19,138,62,0)); animation-duration: 30s; animation-direction: alternate-reverse; }
+.blob.g3 { background: radial-gradient(closest-side, rgba(36,87,197,.14), rgba(36,87,197,0)); animation-duration: 34s; }
+.dark .blob.g1 { background: radial-gradient(closest-side, rgba(163,214,95,.22), rgba(163,214,95,0)); }
+.dark .blob.g2 { background: radial-gradient(closest-side, rgba(43,160,90,.28), rgba(43,160,90,0)); }
+.vec { color: var(--leaf); opacity: .085; animation: sway 20s ease-in-out infinite alternate; }
+.vec.soft { filter: blur(1.5px); }
+.vec.spin { animation: spin 90s linear infinite; }
+.dark .vec { color: var(--sprout); opacity: .09; }
+.vec svg { width: 100%; height: 100%; overflow: visible; }
+@keyframes drift { 0% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(36px,-28px,0) scale(1.08); } 100% { transform: translate3d(-24px,22px,0) scale(.96); } }
+@keyframes sway { 0% { transform: translate3d(0,0,0) rotate(-7deg); } 100% { transform: translate3d(14px,-18px,0) rotate(6deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ==========================================================================
+   Heroes — always fit the first screen
+   ========================================================================== */
+.hero { position: relative; isolation: isolate; min-height: 100svh; max-height: 1000px; display: flex; flex-direction: column; padding-top: var(--nav-space); overflow: hidden;
+  background: radial-gradient(1200px 600px at 85% 20%, rgba(255,255,255,.75), rgba(255,255,255,0) 60%), var(--mist); }
+.hero > .wrap.hero-in { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr); gap: clamp(24px, 4vw, 64px); align-items: center; padding-block: clamp(12px, 3vh, 40px); }
+.hero-copy .h1 { margin-top: 20px; max-width: 13em; }
+.hero-copy .lead { margin-top: 20px; max-width: 34em; }
+.hero-copy .actions { margin-top: 30px; }
+.stage { position: relative; display: grid; place-items: center; }
+.stage::before { content: ""; position: absolute; width: 92%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,255,255,.95), rgba(255,255,255,0)); z-index: 0; }
+.stage-ring { position: absolute; width: 86%; aspect-ratio: 1; border-radius: 50%; border: 1px dashed rgba(19,138,62,.22); z-index: 0; animation: spin 120s linear infinite; }
+.stage-ring::after { content: ""; position: absolute; top: -5px; left: 50%; width: 9px; height: 9px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 0 5px rgba(19,138,62,.15); }
+.stage img.hero-veh { position: relative; z-index: 2; width: auto; max-width: 100%; max-height: min(50vh, 470px); transform: translate3d(calc(var(--mx, 0) * -10px), calc(var(--my, 0) * -6px), 0); transition: transform .6s var(--ease); filter: drop-shadow(0 28px 30px rgba(16,35,26,.18)); }
+.stage .floor { position: absolute; z-index: 1; bottom: 2%; width: 66%; height: 7%; border-radius: 50%; background: radial-gradient(closest-side, rgba(16,35,26,.28), rgba(16,35,26,0)); filter: blur(6px); }
+.hero-foot { position: relative; z-index: 1; padding-bottom: clamp(18px, 3vh, 32px); }
+.points { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.points li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 15px; background: rgba(255,255,255,.62); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1px rgba(16,35,26,.07); font-size: 14.5px; font-weight: 600; line-height: 1.35; color: var(--ink); }
+.points .tick { width: 30px; height: 30px; flex: none; border-radius: 9px; display: grid; place-items: center; background: var(--leaf-tint); color: var(--leaf); }
+.points .tick .i { width: 16px; height: 16px; stroke-width: 2.2; }
+
+.anim .hero-copy > *, .anim .points li { animation: rise .9s var(--ease) both; }
+.anim .hero-copy > :nth-child(2) { animation-delay: .06s; } .anim .hero-copy > :nth-child(3) { animation-delay: .14s; } .anim .hero-copy > :nth-child(4) { animation-delay: .22s; }
+.anim .points li:nth-child(1) { animation-delay: .35s; } .anim .points li:nth-child(2) { animation-delay: .42s; } .anim .points li:nth-child(3) { animation-delay: .49s; } .anim .points li:nth-child(4) { animation-delay: .56s; }
+.anim .stage img.hero-veh { animation: drive 1.4s var(--ease) .1s both; }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes drive { from { opacity: 0; translate: 12% 0; } 35% { opacity: 1; } to { opacity: 1; translate: 0 0; } }
+
+/* inner-page hero */
+.page-hero { position: relative; isolation: isolate; overflow: hidden; padding-top: calc(var(--nav-space) + clamp(16px, 3vw, 40px)); }
+.page-hero.fit { padding-top: var(--nav-space); }
+.page-hero.fit { min-height: min(100svh, 860px); display: flex; flex-direction: column; justify-content: center; padding-bottom: clamp(32px, 5vh, 56px); }
+.ph-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: center; }
+.ph-grid .lead { margin-top: 18px; }
+.ph-grid .actions { margin-top: 26px; }
+.ph-media { border-radius: var(--r-xl); overflow: hidden; background: var(--mist-2); box-shadow: var(--shadow-soft); max-height: min(62vh, 560px); aspect-ratio: 5 / 4; }
+.ph-media img { width: 100%; height: 100%; object-fit: cover; }
+.crumbs { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-3); margin-bottom: 18px; }
+.crumbs a { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); font-weight: 600; }
+.crumbs a:hover { color: var(--leaf); }
+.crumbs .i { width: 15px; height: 15px; }
+@media (max-width: 920px) {
+  .hero { min-height: 0; max-height: none; }
+  .hero > .wrap.hero-in { grid-template-columns: 1fr; padding-top: 20px; }
+  .stage img.hero-veh { max-height: 300px; }
+  .points { grid-template-columns: 1fr 1fr; }
+  .ph-grid { grid-template-columns: 1fr; }
+  .page-hero.fit { min-height: 0; }
+  .ph-media { max-height: 380px; }
+}
+@media (max-width: 520px) {
+  .points { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .points li { padding: 10px 11px; gap: 9px; font-size: 13px; align-items: flex-start; }
+  .points .tick { width: 24px; height: 24px; border-radius: 7px; }
+  .hero-copy .actions .btn { padding-inline: 16px; }
+}
+/* mobile rails: swipeable rows instead of very long stacks */
+@media (max-width: 640px) {
+  .rail-m { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin-inline: calc(var(--gutter) * -1); padding: 4px var(--gutter) 18px; scroll-padding-inline: var(--gutter); scrollbar-width: none; }
+  .rail-m::-webkit-scrollbar { display: none; }
+  .rail-m > * { flex: 0 0 84%; scroll-snap-align: start; }
+  .rail-m .tile .tm, .rail-m .tile.w12 .tm { height: 190px; min-height: 0; width: auto; margin: 10px 10px 0; }
+}
+
+/* ==========================================================================
+   Home sections
+   ========================================================================== */
+.statement { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; align-items: start; }
+.statement .qmark { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: var(--paper); color: var(--leaf); box-shadow: var(--shadow-soft); }
+.statement .qmark svg { width: 26px; height: 26px; fill: currentColor; }
+.statement blockquote { font-size: clamp(24px, 2.4vw, 36px); line-height: 1.25; font-weight: 560; letter-spacing: -0.028em; text-wrap: balance; max-width: 26em; }
+.statement p { margin-top: 14px; font-size: clamp(16px, 1.25vw, 19px); color: var(--ink-3); }
+.marquee { margin-top: clamp(32px, 4vw, 48px); overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: flex; gap: 10px; width: max-content; animation: marquee 60s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee span { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,.7); box-shadow: inset 0 0 0 1px var(--line); font-size: 14px; font-weight: 600; color: var(--ink-2); white-space: nowrap; }
+.marquee span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--leaf); opacity: .7; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* what we do — connected cards */
+.flow-cards { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.flow-line { position: absolute; left: 16%; right: 16%; top: 30px; height: 2px; z-index: 0; background-image: linear-gradient(90deg, var(--line-strong) 50%, transparent 0); background-size: 10px 2px; }
+.flow-line i { position: absolute; top: 50%; width: 10px; height: 10px; margin-top: -5px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 0 5px rgba(19,138,62,.14); animation: travel 6s ease-in-out infinite; }
+@keyframes travel { 0% { left: 0; } 50% { left: calc(100% - 10px); } 100% { left: 0; } }
+.fcard { position: relative; z-index: 1; display: flex; flex-direction: column; border-radius: var(--r-lg); background: var(--paper); box-shadow: var(--shadow-soft); overflow: hidden; transition: transform .45s var(--ease), box-shadow .45s; }
+.fcard:hover { transform: translateY(-4px); box-shadow: 0 1px 2px rgba(16,35,26,.05), 0 24px 44px -22px rgba(16,35,26,.32); }
+.fcard .ic { margin: 10px 0 0 18px; width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; background: var(--leaf); color: #fff; box-shadow: 0 0 0 6px var(--paper); }
+.fcard .ic .i { width: 20px; height: 20px; }
+.fcard .ph { margin: 14px 14px 0; height: 168px; border-radius: 14px; overflow: hidden; background: var(--mist-2); }
+.fcard .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.fcard:hover .ph img { transform: scale(1.04); }
+.fcard .fb { padding: 18px 22px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.fcard .fb p { color: var(--ink-2); font-size: 15.5px; }
+.fcard .fb .link { margin-top: auto; padding-top: 10px; }
+@media (max-width: 900px) { .flow-cards { grid-template-columns: 1fr; } .flow-line { display: none; } }
+
+/* split feature */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.split.flip > :first-child { order: 2; }
+.media { position: relative; border-radius: var(--r-xl); overflow: hidden; background: var(--mist-2); box-shadow: var(--shadow-soft); }
+.media img { width: 100%; height: 100%; object-fit: cover; }
+.media.cut { background: radial-gradient(70% 70% at 50% 45%, #fff, var(--mist-2)); display: grid; place-items: center; padding: 6% 7% 4%; }
+.media.cut img { object-fit: contain; height: auto; filter: drop-shadow(0 20px 24px rgba(16,35,26,.16)); }
+.media.r43 { aspect-ratio: 4 / 3; max-height: 440px; }
+.media.r54 { aspect-ratio: 5 / 4; max-height: 460px; }
+.split .lead { margin-top: 16px; }
+.split .link { margin-top: 22px; }
+.feat2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+.feat2 > div { padding: 16px 18px; border-radius: 15px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); }
+.feat2 .i { color: var(--leaf); width: 20px; height: 20px; }
+.feat2 strong { display: block; margin-top: 10px; font-weight: 650; font-size: 15.5px; letter-spacing: -0.01em; }
+.feat2 span { display: block; font-size: 14px; color: var(--ink-3); line-height: 1.5; margin-top: 2px; }
+@media (max-width: 900px) { .split { grid-template-columns: 1fr; } .split.flip > :first-child { order: 0; } }
+@media (max-width: 520px) { .feat2 { grid-template-columns: 1fr; } }
+
+/* products bento */
+.bento { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; }
+.tile { position: relative; grid-column: span 4; display: flex; flex-direction: column; border-radius: var(--r-lg); background: var(--paper); overflow: hidden; box-shadow: var(--shadow-soft); isolation: isolate; transition: transform .45s var(--ease), box-shadow .45s; }
+.tile:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(16,35,26,.05), 0 24px 44px -24px rgba(16,35,26,.34); }
+.tile::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(360px circle at var(--px, 50%) var(--py, 50%), rgba(163,214,95,.16), transparent 60%); }
+.tile:hover::after { opacity: 1; }
+.tile.w7 { grid-column: span 7; } .tile.w5 { grid-column: span 5; } .tile.w12 { grid-column: span 12; flex-direction: row; }
+.tile .tm { height: 220px; margin: 10px 10px 0; border-radius: 14px; background: radial-gradient(70% 80% at 50% 45%, #fff, var(--mist-2)); display: grid; place-items: center; overflow: hidden; }
+.tile.w7 .tm, .tile.w5 .tm { height: 250px; }
+.tile .tm img { max-height: 86%; max-width: 86%; object-fit: contain; transition: transform .8s var(--ease); filter: drop-shadow(0 14px 16px rgba(16,35,26,.14)); }
+.tile .tm.photo img { max-height: none; max-width: none; width: 100%; height: 100%; object-fit: cover; filter: none; }
+.tile:hover .tm img { transform: scale(1.04); }
+.tile .tb { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.tile .tb p { font-size: 14.5px; color: var(--ink-2); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.tile .tb .link { margin-top: auto; padding-top: 6px; font-size: 14.5px; }
+.tile .tag { position: absolute; top: 20px; left: 20px; z-index: 2; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,.9); color: var(--canopy); box-shadow: 0 0 0 1px var(--line); letter-spacing: .02em; }
+.tile.w12 .tm { width: 42%; flex: none; height: 280px; margin: 10px 0 10px 10px; }
+.tile.w12 .tb .link { margin-top: 10px; }
+.tile.w12 .tb { justify-content: center; padding: 28px 36px; }
+.tile.w12 .tb p { -webkit-line-clamp: 4; max-width: 60ch; }
+@media (max-width: 980px) { .tile, .tile.w7, .tile.w5 { grid-column: span 6; } .tile.w12 { grid-column: span 12; } }
+@media (max-width: 640px) { .tile, .tile.w7, .tile.w5 { grid-column: span 12; } .tile.w12 { flex-direction: column; } .tile.w12 .tm { width: auto; margin: 10px 10px 0; min-height: 220px; } .tile.w12 .tb { padding: 18px 20px 20px; } }
+
+/* spaces */
+.spaces { display: grid; grid-template-columns: minmax(0, 4.6fr) minmax(0, 7.4fr); gap: 16px; align-items: stretch; }
+.tabs { display: flex; flex-direction: column; gap: 6px; }
+.tab { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 12px 14px; border-radius: 15px; color: var(--ink-2); transition: background-color .25s, color .25s, box-shadow .25s; }
+.tab .tic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--leaf-tint); color: var(--leaf); transition: background-color .25s, color .25s; }
+.tab .tic .i { width: 19px; height: 19px; }
+.tab strong { font-weight: 650; font-size: 16px; letter-spacing: -0.012em; }
+.tab .cnt { font-size: 13px; font-weight: 650; color: var(--ink-3); padding: 4px 9px; border-radius: 999px; background: rgba(16,35,26,.05); }
+.tab:hover { background: rgba(255,255,255,.6); }
+.tab[aria-selected="true"] { background: var(--paper); color: var(--ink); box-shadow: var(--shadow-soft); }
+.tab[aria-selected="true"] .tic { background: var(--leaf); color: #fff; }
+.tab[aria-selected="true"] .cnt { background: var(--leaf-tint); color: var(--leaf); }
+.panel { border-radius: var(--r-lg); background: var(--paper); box-shadow: var(--shadow-soft); overflow: hidden; display: grid; grid-template-columns: 1.05fr 1fr; min-height: 340px; }
+.panel[hidden] { display: none; }
+.panel .pm { position: relative; background: radial-gradient(70% 70% at 50% 45%, #fff, var(--mist-2)); margin: 10px; border-radius: 14px; overflow: hidden; min-height: 300px; }
+.panel .pm img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.panel .pm.cut img { object-fit: contain; padding: 30px; }
+.panel .pb { padding: 26px 26px 26px 14px; display: flex; flex-direction: column; }
+.panel .pb h3 { margin-bottom: 14px; }
+.panel ul { display: grid; gap: 4px; }
+.panel li { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
+.panel li:last-child { border-bottom: 0; }
+.panel li .i { width: 17px; height: 17px; color: var(--leaf); stroke-width: 2.2; }
+.panel.is-in { animation: fadeUp .45s var(--ease) both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.spaces-foot { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-size: 14.5px; color: var(--ink-3); }
+.spaces-foot b { color: var(--ink); font-weight: 700; }
+@media (max-width: 980px) {
+  .spaces { grid-template-columns: 1fr; }
+  .tabs { flex-direction: row; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { grid-template-columns: 32px auto auto; flex: none; width: auto; padding: 8px 12px 8px 8px; }
+  .tab .tic { width: 32px; height: 32px; border-radius: 9px; }
+  .tab strong { font-size: 14.5px; white-space: nowrap; }
+}
+@media (max-width: 640px) { .panel { grid-template-columns: 1fr; } .panel .pm { min-height: 220px; } .panel .pb { padding: 6px 20px 20px; } }
+
+/* steps */
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; position: relative; }
+.step { position: relative; padding: 22px 22px 24px; border-radius: var(--r-lg); background: var(--paper); box-shadow: var(--shadow-soft); }
+.step .n { display: inline-grid; place-items: center; min-width: 44px; height: 30px; padding: 0 10px; border-radius: 999px; background: var(--leaf-tint); color: var(--leaf); font-weight: 750; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.step h3 { margin-top: 18px; }
+.step p { margin-top: 6px; font-size: 15px; color: var(--ink-2); }
+.step::after { content: ""; position: absolute; top: 37px; right: -14px; width: 14px; height: 2px; background: var(--line-strong); }
+.step:last-child::after { display: none; }
+@media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } .step::after { display: none; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* immersive band */
+.band { position: relative; isolation: isolate; border-radius: var(--r-xl); overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 420px; background: var(--canopy); color: var(--on-dark); }
+.band .bm { position: relative; min-height: 300px; }
+.band .bm img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.band .bb { position: relative; padding: clamp(28px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; }
+.band .bb .lead { margin-top: 16px; }
+.band .bb .link { margin-top: 24px; }
+@media (max-width: 900px) { .band { grid-template-columns: 1fr; } }
+
+.join { position: relative; isolation: isolate; border-radius: var(--r-xl); overflow: hidden; min-height: 400px; display: flex; align-items: center; color: #fff; }
+.join > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.join::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(95deg, rgba(10,38,26,.9) 0%, rgba(10,38,26,.72) 42%, rgba(10,38,26,.15) 100%); }
+.join .jb { padding: clamp(28px, 5vw, 64px); max-width: 640px; }
+.join .jb p { color: rgba(255,255,255,.82); margin-top: 14px; font-size: 16.5px; }
+.join .jb p.strong { color: #fff; font-weight: 650; font-size: clamp(18px, 1.5vw, 21px); letter-spacing: -0.015em; line-height: 1.45; }
+.join .actions { margin-top: 26px; }
+
+/* ==========================================================================
+   Footer (with pre-footer CTA)
+   ========================================================================== */
+.site-footer { position: relative; isolation: isolate; overflow: hidden; background: var(--canopy); color: var(--on-dark); }
+.pre { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; padding-block: clamp(56px, 6vw, 88px); border-bottom: 1px solid var(--line-dark); }
+.pre .h2 { margin-top: 16px; max-width: 16em; }
+.f-main { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 32px; padding-block: 48px; }
+.f-main p { color: var(--on-dark-2); font-size: 15px; margin-top: 16px; max-width: 32ch; }
+.f-social { display: flex; gap: 8px; margin-top: 20px; }
+.f-social a { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; box-shadow: inset 0 0 0 1px var(--line-dark); color: var(--on-dark-2); transition: color .2s, background-color .2s; }
+.f-social a:hover { color: var(--on-dark); background: rgba(255,255,255,.06); }
+.f-social .i { width: 18px; height: 18px; }
+.f-col h3 { font-size: 13px; font-weight: 700; color: var(--on-dark-3); margin-bottom: 14px; letter-spacing: .02em; }
+.f-col ul { display: grid; gap: 9px; }
+.f-col a { color: var(--on-dark-2); font-size: 15px; transition: color .2s; }
+.f-col a:hover { color: var(--on-dark); }
+.f-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 20px 28px; border-top: 1px solid var(--line-dark); font-size: 13.5px; color: var(--on-dark-3); }
+@media (max-width: 900px) { .pre { grid-template-columns: 1fr; align-items: start; } .f-main { grid-template-columns: 1fr 1fr; } .f-main > :first-child { grid-column: span 2; } }
+@media (max-width: 520px) { .f-main { grid-template-columns: 1fr; } .f-main > :first-child { grid-column: auto; } }
+
+/* ==========================================================================
+   Services
+   ========================================================================== */
+.trio { position: relative; height: min(52vh, 460px); }
+.trio img { position: absolute; filter: drop-shadow(0 24px 26px rgba(16,35,26,.18)); transform: translate3d(calc(var(--mx, 0) * var(--d, -8px)), calc(var(--my, 0) * var(--d, -6px)), 0); transition: transform .7s var(--ease); }
+.trio .t1 { width: 62%; right: 0; bottom: 12%; --d: -12px; z-index: 2; }
+.trio .t2 { width: 46%; left: 0; bottom: 4%; --d: -6px; z-index: 3; }
+.trio .t3 { width: 26%; right: 8%; top: 0; --d: -4px; z-index: 1; opacity: .95; }
+.trio::before { content: ""; position: absolute; inset: 6% 4% 0; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,255,255,.95), rgba(255,255,255,0)); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); font-size: 14px; font-weight: 600; color: var(--ink-2); transition: box-shadow .2s, color .2s; }
+a.chip:hover { box-shadow: inset 0 0 0 1px var(--leaf); color: var(--leaf); }
+.chip .n { color: var(--leaf); font-variant-numeric: tabular-nums; font-weight: 750; font-size: 12.5px; }
+
+.prow { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 64px); align-items: center; padding: 18px; border-radius: var(--r-xl); background: var(--paper); box-shadow: var(--shadow-soft); }
+.prow + .prow { margin-top: 16px; }
+.prow.flip { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.prow.flip .pmedia { order: 2; }
+.pmedia { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 4 / 3; max-height: 380px; background: radial-gradient(70% 70% at 50% 45%, #fff, var(--mist-2)); display: grid; place-items: center; }
+.pmedia img { width: 82%; height: 82%; object-fit: contain; filter: drop-shadow(0 18px 20px rgba(16,35,26,.16)); transition: transform .8s var(--ease); }
+.pmedia.photo img { width: 100%; height: 100%; object-fit: cover; filter: none; }
+.prow:hover .pmedia img { transform: scale(1.03); }
+.ptext { padding: 12px 10px 12px 0; }
+.prow.flip .ptext { padding: 12px 0 12px 22px; }
+.ptext .meta { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--ink-3); font-weight: 650; }
+.ptext .meta .n { color: var(--leaf); font-variant-numeric: tabular-nums; }
+.line-tag { display: inline-flex; align-items: center; line-height: 1.2; padding: 6px 11px; border-radius: 999px; background: var(--canopy); color: var(--on-dark); font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+.ptext .h2 { margin-top: 12px; font-size: clamp(24px, 2.1vw, 32px); }
+.ptext .body { margin-top: 12px; font-size: 15.5px; }
+.ptext .actions { margin-top: 20px; }
+@media (max-width: 900px) { .prow, .prow.flip { grid-template-columns: 1fr; } .prow.flip .pmedia { order: 0; } .ptext, .prow.flip .ptext { padding: 4px 6px 8px; } }
+
+.dev-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.dcard { display: flex; flex-direction: column; border-radius: var(--r-lg); background: var(--paper); overflow: hidden; box-shadow: var(--shadow-soft); transition: transform .45s var(--ease); }
+.dcard:hover { transform: translateY(-3px); }
+.dcard .dm { height: 190px; margin: 10px 10px 0; border-radius: 14px; overflow: hidden; }
+.dcard .dm img { width: 100%; height: 100%; object-fit: cover; }
+.dcard .db { padding: 16px 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+.dcard .db p { font-size: 14.5px; color: var(--ink-2); line-height: 1.6; }
+.status { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700; color: var(--leaf); }
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 3px rgba(19,138,62,.16); animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 6px rgba(19,138,62,0); } }
+@media (max-width: 900px) { .dev-grid { grid-template-columns: 1fr; } .dcard { display: grid; grid-template-columns: 1fr 1.3fr; } .dcard .dm { height: auto; margin: 10px; } }
+@media (max-width: 560px) { .dcard { display: flex; } .dcard .dm { height: 190px; margin: 10px 10px 0; } }
+
+.need { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 22px; align-items: center; padding: clamp(24px, 3vw, 36px); border-radius: var(--r-xl); background: var(--paper); box-shadow: var(--shadow-soft); position: relative; overflow: hidden; isolation: isolate; }
+.bg-paper .need { background: var(--mist); box-shadow: inset 0 0 0 1px var(--line); }
+.need .ic { width: 56px; height: 56px; border-radius: 16px; background: var(--leaf-tint); color: var(--leaf); display: grid; place-items: center; }
+.need p { color: var(--ink-2); margin-top: 6px; }
+@media (max-width: 760px) { .need { grid-template-columns: 1fr; } }
+
+/* product detail */
+.pd { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(28px, 4vw, 64px); align-items: center; }
+.pd .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.pd .h1 { margin-top: 16px; font-size: clamp(32px, 3.4vw, 50px); }
+.pd .body { margin-top: 16px; font-size: 15.5px; line-height: 1.75; }
+.pd .actions { margin-top: 24px; }
+.pd .small { margin-top: 16px; }
+.pd-media { position: relative; border-radius: var(--r-xl); background: radial-gradient(70% 70% at 50% 45%, #fff, var(--mist-2)); box-shadow: var(--shadow-soft); aspect-ratio: 6 / 5; max-height: min(64vh, 560px); display: grid; place-items: center; overflow: hidden; }
+.pd-media.photo img { width: 100%; height: 100%; object-fit: cover; }
+.pd-media > img.contain { width: 78%; height: 78%; object-fit: contain; filter: drop-shadow(0 20px 22px rgba(16,35,26,.16)); }
+.vehicle { position: relative; width: 70%; }
+.vehicle img { width: 100%; height: auto; filter: drop-shadow(0 20px 22px rgba(16,35,26,.16)); }
+.dim { position: absolute; color: var(--ink-3); font-size: 12px; font-weight: 600; }
+.dim-h { left: 0; right: 0; bottom: -12%; height: 14px; border-left: 1px solid var(--line-strong); border-right: 1px solid var(--line-strong); }
+.dim-h::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed var(--line-strong); }
+.dim-h span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 3px 10px; border-radius: 999px; background: var(--paper); box-shadow: 0 0 0 1px var(--line); white-space: nowrap; }
+.dim-v { top: 0; bottom: 2%; left: -12%; width: 14px; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.dim-v::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px dashed var(--line-strong); }
+.dim-v span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-90deg); padding: 3px 10px; border-radius: 999px; background: var(--paper); box-shadow: 0 0 0 1px var(--line); white-space: nowrap; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px; font-size: 12.5px; font-weight: 700; background: var(--leaf-tint); color: var(--leaf); box-shadow: inset 0 0 0 1px rgba(19,138,62,.14); }
+@media (max-width: 920px) { .pd { grid-template-columns: 1fr; } .pd-media { max-height: 420px; } }
+
+.specs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.spec-item { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; padding: 14px 16px; border-radius: 15px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); font-size: 15px; line-height: 1.5; color: var(--ink); font-weight: 550; }
+.spec-item .n { width: 34px; height: 26px; border-radius: 8px; display: grid; place-items: center; background: var(--leaf-tint); color: var(--leaf); font-size: 12.5px; font-weight: 750; font-variant-numeric: tabular-nums; }
+@media (max-width: 760px) { .specs { grid-template-columns: 1fr; } }
+.ttable { margin-top: 18px; border-radius: var(--r-lg); background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.ttable table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.ttable caption { text-align: left; caption-side: top; padding: 16px 20px; font-weight: 700; font-size: 15px; border-bottom: 1px solid var(--line); }
+.ttable caption span { color: var(--ink-3); font-weight: 600; margin-left: 6px; }
+.ttable th, .ttable td { text-align: left; padding: 11px 20px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.ttable thead th { font-size: 12.5px; color: var(--ink-3); font-weight: 700; background: var(--mist); letter-spacing: .02em; }
+.ttable tbody th { font-weight: 550; color: var(--ink-2); width: 48%; }
+.ttable td { font-weight: 650; font-variant-numeric: tabular-nums; }
+.ttable td.u { color: var(--ink-3); font-weight: 600; }
+.ttable tr:last-child th, .ttable tr:last-child td { border-bottom: 0; }
+.ttable tbody tr:nth-child(even) { background: rgba(241,244,238,.5); }
+.ttable.split-t { margin-top: 14px; box-shadow: var(--shadow-soft); }
+.tcap { display: flex; align-items: baseline; gap: 10px; padding: 16px 22px; border-bottom: 1px solid var(--line); font-size: 15px; }
+.tcap span { color: var(--ink-3); font-weight: 600; }
+.tcols { display: grid; grid-template-columns: 1fr 1fr; }
+.tcols table + table { border-left: 1px solid var(--line); }
+.tcols tbody th { width: 46%; }
+.tcols td.u { white-space: nowrap; width: 1%; padding-right: 22px; }
+@media (max-width: 640px) {
+  .tcols thead { display: none; }
+  .tcols tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; border-bottom: 1px solid var(--line); }
+  .tcols tr:last-child { border-bottom: 0; }
+  .tcols th[scope="row"], .tcols td { border-bottom: 0; }
+  .tcols th[scope="row"] { grid-column: 1 / -1; width: auto; padding: 12px 18px 2px; font-size: 13.5px; color: var(--ink-3); }
+  .tcols td { padding: 0 18px 12px; }
+  .tcols td.u { width: auto; padding: 0 18px 12px 8px; text-align: right; }
+}
+@media (max-width: 900px) { .tcols { grid-template-columns: 1fr; } .tcols table + table { border-left: 0; border-top: 1px solid var(--line); } .tcols table + table thead { display: none; } }
+.cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+@media (max-width: 980px) { .cols2 { grid-template-columns: 1fr; } }
+.how { border-radius: var(--r-xl); background: var(--paper); box-shadow: var(--shadow-soft); padding: 16px; }
+.how img { width: 100%; max-width: 980px; max-height: 560px; object-fit: contain; margin-inline: auto; border-radius: 12px; }
+.zero { position: relative; isolation: isolate; overflow: hidden; border-radius: var(--r-xl); background: var(--canopy); color: var(--on-dark); padding: clamp(32px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; }
+.zero p { color: var(--on-dark-2); margin-top: 12px; max-width: 56ch; }
+@media (max-width: 860px) { .zero { grid-template-columns: 1fr; } }
+.mini-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.mini { display: flex; flex-direction: column; gap: 10px; padding: 10px 10px 14px; border-radius: 16px; background: var(--paper); box-shadow: var(--shadow-soft); transition: transform .4s var(--ease); }
+.mini:hover { transform: translateY(-3px); }
+.mini .mm { height: 104px; border-radius: 11px; background: radial-gradient(70% 70% at 50% 45%, #fff, var(--mist-2)); display: grid; place-items: center; overflow: hidden; }
+.mini .mm img { max-height: 84%; max-width: 84%; object-fit: contain; }
+.mini .mm.photo img { max-height: none; max-width: none; width: 100%; height: 100%; object-fit: cover; }
+.mini strong { font-size: 14.5px; font-weight: 650; padding: 0 4px; letter-spacing: -0.01em; }
+@media (max-width: 980px) { .mini-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .mini-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ==========================================================================
+   Responsibility
+   ========================================================================== */
+.collage { position: relative; height: min(58vh, 520px); }
+.collage .c1, .collage .c2 { position: absolute; border-radius: var(--r-xl); overflow: hidden; box-shadow: 0 30px 60px -30px rgba(16,35,26,.45); }
+.collage img { width: 100%; height: 100%; object-fit: cover; }
+.collage .c1 { inset: 0 18% 14% 0; }
+.collage .c2 { width: 46%; height: 52%; right: 0; bottom: 0; box-shadow: 0 0 0 8px var(--mist), 0 30px 60px -30px rgba(16,35,26,.45); }
+.pillar { display: grid; grid-template-columns: minmax(0, 4.4fr) minmax(0, 7.6fr); gap: 16px; padding: 16px; border-radius: var(--r-xl); background: var(--paper); box-shadow: var(--shadow-soft); }
+.pillar + .pillar { margin-top: 16px; }
+.pillar .pl { display: flex; flex-direction: column; gap: 16px; padding: 14px 10px 10px 14px; }
+.pillar .pl .ic { width: 46px; height: 46px; border-radius: 14px; background: var(--leaf); color: #fff; display: grid; place-items: center; }
+.pillar .pl figure { margin-top: auto; border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 10; background: var(--mist-2); }
+.pillar .pl figure img { width: 100%; height: 100%; object-fit: cover; }
+.pillar .pl figure.contain { background: var(--mist); padding: 12px; }
+.pillar .pl figure.contain img { object-fit: contain; }
+.pillar.dark-p { background: var(--canopy); color: var(--on-dark); }
+.pillar.dark-p .pl .ic { background: var(--sprout); color: var(--canopy); }
+.pillar ul { display: grid; gap: 10px; align-content: start; }
+.pillar li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 16px 18px; border-radius: 15px; background: var(--mist); }
+.pillar.dark-p li { background: rgba(255,255,255,.06); }
+.pillar li .tk { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: var(--paper); color: var(--leaf); box-shadow: inset 0 0 0 1px var(--line); }
+.pillar.dark-p li .tk { background: rgba(163,214,95,.14); color: var(--sprout); box-shadow: none; }
+.pillar li .tk .i { width: 16px; height: 16px; stroke-width: 2.2; }
+.pillar li strong { display: block; font-weight: 700; font-size: 16px; letter-spacing: -0.012em; color: var(--leaf); }
+.pillar.dark-p li strong { color: var(--sprout); }
+.pillar li span { display: block; margin-top: 3px; font-size: 15px; color: var(--ink-2); line-height: 1.6; }
+.pillar.dark-p li span { color: var(--on-dark-2); }
+@media (max-width: 900px) { .pillar { grid-template-columns: 1fr; } .collage { height: 360px; } }
+.impact3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.impact3 > div { position: relative; overflow: hidden; isolation: isolate; border-radius: var(--r-lg); padding: 26px; background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px var(--line-dark); }
+.impact3 .ic { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--sprout); color: var(--canopy); }
+.impact3 h3 { margin-top: 20px; }
+.impact3 p { margin-top: 6px; color: var(--on-dark-2); font-size: 15px; }
+@media (max-width: 860px) { .impact3 { grid-template-columns: 1fr; } }
+
+/* coming soon */
+.soon { min-height: 100svh; max-height: 980px; display: grid; place-items: center; text-align: center; padding: var(--nav-space) var(--gutter) 48px; position: relative; isolation: isolate; overflow: hidden; }
+.soon .art { width: min(260px, 50vw); margin: 0 auto 26px; }
+.soon .h1 { max-width: 15em; margin: 18px auto 0; }
+.soon .lead { margin: 16px auto 0; }
+.soon .dots { display: flex; justify-content: center; gap: 8px; margin-top: 26px; }
+.soon .dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--leaf); animation: bounce 1.2s ease-in-out infinite; }
+.soon .dots i:nth-child(2) { animation-delay: .15s; background: var(--sprout); } .soon .dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); opacity: .6; } 50% { transform: translateY(-7px); opacity: 1; } }
+.soon .actions { justify-content: center; margin-top: 30px; }
+
+/* ==========================================================================
+   About + team + profile
+   ========================================================================== */
+.checks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+.checks li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); font-size: 15px; font-weight: 650; }
+.checks li .tk { width: 28px; height: 28px; border-radius: 8px; flex: none; display: grid; place-items: center; background: var(--leaf-tint); color: var(--leaf); }
+.checks li .tk .i { width: 15px; height: 15px; stroke-width: 2.4; }
+@media (max-width: 600px) { .checks { grid-template-columns: 1fr; } }
+.recog { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.recog .card { margin-top: 24px; padding: 18px 20px; border-radius: 16px; background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); display: grid; grid-template-columns: 40px 1fr; gap: 14px; }
+.recog .card .ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--leaf-tint); color: var(--leaf); }
+.recog .card span { display: block; color: var(--ink-3); font-size: 14.5px; margin-top: 2px; }
+.cert { border-radius: var(--r-xl); background: var(--paper); padding: 16px; box-shadow: var(--shadow-soft); max-width: 420px; justify-self: center; transform: rotate(1.2deg); transition: transform .6s var(--ease); }
+.cert:hover { transform: rotate(0); }
+.cert img { border-radius: 10px; max-height: 520px; width: auto; margin: auto; }
+@media (max-width: 900px) { .recog { grid-template-columns: 1fr; } }
+.quote { position: relative; isolation: isolate; overflow: hidden; border-radius: var(--r-xl); background: var(--leaf); color: #fff; padding: clamp(32px, 5vw, 64px); }
+.quote blockquote { font-size: clamp(22px, 2.3vw, 34px); font-weight: 560; line-height: 1.3; letter-spacing: -0.025em; max-width: 30em; text-wrap: balance; }
+.quote figcaption { margin-top: 18px; color: rgba(255,255,255,.8); font-size: 15px; font-weight: 600; }
+.team-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.group-label { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+.group-label::after { content: ""; flex: 1; height: 1px; background: var(--line-strong); }
+.person { display: flex; flex-direction: column; border-radius: var(--r-lg); background: var(--paper); box-shadow: var(--shadow-soft); overflow: hidden; transition: transform .45s var(--ease), box-shadow .45s; }
+.person:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(16,35,26,.05), 0 24px 44px -24px rgba(16,35,26,.34); }
+.person .pp { margin: 8px 8px 0; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden; background: var(--mist-2); }
+.person .pp img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.person:hover .pp img { transform: scale(1.04); }
+.person .pt { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.person strong { font-weight: 700; font-size: 15.5px; letter-spacing: -0.012em; line-height: 1.35; }
+.person span { font-size: 13.5px; color: var(--ink-3); line-height: 1.45; }
+.person .link { margin-top: auto; padding-top: 10px; font-size: 14px; }
+.leaders { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.leader { display: grid; grid-template-columns: 0.9fr 1.1fr; border-radius: var(--r-lg); background: var(--paper); box-shadow: var(--shadow-soft); overflow: hidden; transition: transform .45s var(--ease); }
+.leader:hover { transform: translateY(-3px); }
+.leader .pp { margin: 8px; border-radius: 14px; overflow: hidden; aspect-ratio: 4 / 4.4; background: var(--mist-2); }
+.leader .pp img { width: 100%; height: 100%; object-fit: cover; }
+.leader .pt { padding: 24px 22px 22px 12px; display: flex; flex-direction: column; gap: 6px; }
+.leader strong { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.3; }
+.leader span { color: var(--ink-3); font-size: 14.5px; }
+.leader .link { margin-top: auto; }
+.leader .bx { margin-top: 10px; color: var(--ink-2); font-size: 14.5px; line-height: 1.65; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.groups-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
+.groups-row .team-row { grid-template-columns: repeat(var(--c), minmax(0, 1fr)); }
+@media (max-width: 980px) { .team-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } .groups-row { grid-template-columns: 1fr 1fr; } .groups-row > :first-child { grid-column: span 2; } }
+@media (max-width: 640px) { .team-row { grid-template-columns: 1fr 1fr; } .leaders { grid-template-columns: 1fr; } .groups-row { grid-template-columns: 1fr; } .groups-row > :first-child { grid-column: auto; } .groups-row .team-row { grid-template-columns: 1fr 1fr; } }
+
+.profile { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(24px, 4vw, 56px); align-items: start; }
+.profile aside { position: sticky; top: calc(var(--nav-space) + 8px); border-radius: var(--r-xl); background: var(--paper); box-shadow: var(--shadow-soft); padding: 10px; }
+.profile aside .pp { aspect-ratio: 1 / 1.05; border-radius: 20px; overflow: hidden; background: var(--mist-2); }
+.profile aside .pp img { width: 100%; height: 100%; object-fit: cover; }
+.profile aside dl { padding: 8px 10px 4px; }
+.profile aside dl div { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+.profile aside dl div:last-child { border-bottom: 0; }
+.profile aside dt { color: var(--ink-3); }
+.profile aside dd { font-weight: 650; text-align: right; overflow-wrap: anywhere; }
+.profile aside dd a { color: var(--leaf); }
+.profile .chips { margin-top: 2px; }
+.profile .h1 { margin-top: 14px; font-size: clamp(30px, 3.2vw, 46px); }
+.profile .where { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; color: var(--ink-2); font-size: 15px; font-weight: 600; }
+.profile .where span, .profile .where a { display: inline-flex; align-items: center; gap: 7px; }
+.profile .where a:hover { color: var(--leaf); }
+.profile .where .i { width: 17px; height: 17px; color: var(--leaf); }
+.bio { margin-top: 28px; padding: clamp(22px, 3vw, 34px); border-radius: var(--r-xl); background: var(--paper); box-shadow: var(--shadow-soft); }
+.bio p { color: var(--ink-2); font-size: 16px; line-height: 1.8; max-width: 70ch; }
+.bio p + p { margin-top: 1em; }
+.trusted { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 10px 16px; border-radius: 999px; background: var(--leaf-tint); color: var(--leaf); font-weight: 700; font-size: 14px; }
+@media (max-width: 860px) { .profile { grid-template-columns: 1fr; } .profile aside { position: static; max-width: 420px; } }
+
+/* ==========================================================================
+   Careers
+   ========================================================================== */
+.ctabs { display: inline-flex; gap: 4px; padding: 5px; border-radius: 16px; background: rgba(255,255,255,.7); box-shadow: inset 0 0 0 1px var(--line); margin-top: 26px; flex-wrap: wrap; }
+.ctabs a { padding: 10px 16px; border-radius: 12px; font-size: 14.5px; font-weight: 650; color: var(--ink-2); transition: background-color .2s, color .2s; }
+.ctabs a:hover { color: var(--ink); }
+.ctabs a[aria-current="page"] { background: var(--canopy); color: var(--on-dark); }
+.search { display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 10px; padding: 10px; border-radius: 18px; background: var(--paper); box-shadow: var(--shadow-soft); }
+.search.one { grid-template-columns: 1fr; }
+.field { position: relative; }
+.field .i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--ink-3); pointer-events: none; }
+.input, .select, .textarea { width: 100%; height: 50px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--paper); padding: 0 16px; font-size: 15.5px; color: var(--ink); transition: border-color .2s, box-shadow .2s; appearance: none; }
+.field .input, .field .select { padding-left: 44px; }
+.select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7b71' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-size: 18px; padding-right: 42px; }
+.textarea { height: auto; min-height: 96px; padding: 13px 16px; resize: vertical; line-height: 1.5; }
+.input:hover, .select:hover, .textarea:hover { border-color: var(--ink-3); }
+.input:focus, .select:focus, .textarea:focus { outline: none; border-color: var(--leaf); box-shadow: 0 0 0 4px rgba(19,138,62,.14); }
+.input::placeholder, .textarea::placeholder { color: #8d9a92; }
+@media (max-width: 640px) { .search { grid-template-columns: 1fr; } }
+.count { margin: 18px 4px 12px; font-size: 14.5px; color: var(--ink-3); }
+.list { display: grid; gap: 12px; }
+.list.two { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
+.list.two .job { grid-template-columns: 1fr; grid-template-rows: 1fr auto; }
+.list.two .job .ja { padding-top: 4px; }
+@media (max-width: 900px) { .list.two { grid-template-columns: 1fr; } }
+.job { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 28px; align-items: start; padding: 22px 24px; border-radius: var(--r-lg); background: var(--paper); box-shadow: var(--shadow-soft); transition: transform .4s var(--ease); }
+.job:hover { transform: translateY(-2px); }
+.job .co { font-size: 15px; color: var(--ink-2); margin-top: 2px; }
+.job .meta { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; font-size: 13.5px; color: var(--ink-3); font-weight: 550; }
+.job .meta span { display: inline-flex; align-items: center; gap: 6px; }
+.job .meta .i { width: 15px; height: 15px; }
+.job .pay { color: var(--leaf); font-weight: 700; }
+.job p.d { margin-top: 12px; color: var(--ink-2); font-size: 15px; max-width: 80ch; }
+.job[hidden] { display: none; }
+.empty { padding: 48px 24px; text-align: center; border-radius: var(--r-lg); background: var(--paper); box-shadow: var(--shadow-soft); }
+.empty .i { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--mist-3); }
+.empty p { color: var(--ink-2); margin-top: 6px; }
+.ev-date { width: 64px; text-align: center; border-radius: 14px; background: var(--leaf-tint); padding: 10px 6px; }
+.ev-date b { display: block; font-size: 24px; line-height: 1; font-weight: 750; color: var(--leaf); font-variant-numeric: tabular-nums; }
+.ev-date span { display: block; font-size: 12.5px; font-weight: 700; color: var(--ink-3); margin-top: 4px; }
+.event { grid-template-columns: 64px minmax(0, 1fr); }
+@media (max-width: 640px) { .job { grid-template-columns: 1fr; } }
+
+/* booking + login */
+.book { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+.form-card { border-radius: var(--r-xl); background: var(--paper); box-shadow: var(--shadow-soft); padding: clamp(22px, 3vw, 36px); }
+.fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.fgrid .full { grid-column: 1 / -1; }
+.fl label { display: block; font-size: 14px; font-weight: 650; margin-bottom: 8px; }
+.fl .err { font-size: 13px; color: var(--s-sanitary); margin-top: 6px; display: none; }
+.fl.invalid .input, .fl.invalid .select, .fl.invalid .textarea { border-color: var(--s-sanitary); }
+.fl.invalid .err { display: block; }
+.form-card .btn[type="submit"] { width: 100%; margin-top: 22px; }
+.side-card { position: relative; isolation: isolate; overflow: hidden; border-radius: var(--r-xl); background: var(--canopy); color: var(--on-dark); padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 16px; }
+.side-card img.veh { width: 74%; max-height: 230px; object-fit: contain; object-position: right bottom; margin: auto 0 0 auto; filter: drop-shadow(0 24px 30px rgba(0,0,0,.35)); }
+.cline { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,.06); font-weight: 650; font-size: 15px; transition: background-color .2s; }
+.cline:hover { background: rgba(255,255,255,.1); }
+.cline .i { color: var(--sprout); width: 20px; height: 20px; }
+@media (max-width: 900px) { .book { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .fgrid { grid-template-columns: 1fr; } }
+.login { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-height: calc(100svh - var(--nav-space) - 24px); }
+.login-art { position: relative; isolation: isolate; overflow: hidden; border-radius: var(--r-xl); background: var(--canopy); color: var(--on-dark); padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.login-art img.veh { width: 78%; margin-left: auto; filter: drop-shadow(0 26px 30px rgba(0,0,0,.4)); }
+.login-art .tag { font-size: 13px; color: var(--on-dark-3); }
+.login-form { border-radius: var(--r-xl); background: var(--paper); box-shadow: var(--shadow-soft); display: grid; place-items: center; padding: clamp(24px, 4vw, 48px); }
+.login-form form { width: min(400px, 100%); display: grid; gap: 16px; }
+.pw { position: relative; }
+.pw button { position: absolute; right: 7px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; color: var(--ink-3); }
+.pw button:hover { background: var(--mist); }
+.status-msg { padding: 12px 14px; border-radius: 12px; background: var(--leaf-tint); color: var(--leaf-press); font-size: 14px; display: none; }
+.status-msg.show { display: block; }
+@media (max-width: 860px) { .login { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   Motion: scroll-driven reveals + page transitions
+   ========================================================================== */
+@supports (animation-timeline: view()) {
+  .rv { animation: rv linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+  @keyframes rv { from { opacity: 0; transform: translateY(28px) scale(.985); } to { opacity: 1; transform: none; } }
+}
+#app.is-entering { animation: pageIn .5s var(--ease) both; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .35s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  .rv { animation: none !important; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#app">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="nav-shell" id="site-header"></header>
+<nav class="drawer" id="drawer" aria-label="Site"></nav>
+<main id="app" tabindex="-1" style="outline:none"></main>
+<footer class="site-footer" id="site-footer"></footer>
+<noscript><p style="padding:120px 24px;max-width:640px;margin:auto">This site needs JavaScript to show its pages. Please enable JavaScript, or contact Go Green Plus at gogreenplus.in@gmail.com or +91 88370 68696.</p></noscript>
+<script>
+/* ==========================================================================
+   Content — verbatim from the current Go Green Plus site (pages + src/data/data.ts).
+   Technical tables for VAYU and SegreGO are verbatim from the Go Green Plus brochure.
+   ========================================================================== */
+
+const IMG = "assets/img/";
+
+const CONTACT = {
+  phone: "+91 88370 68696",
+  phoneHref: "tel:+918837068696",
+  email: "gogreenplus.in@gmail.com",
+  directorEmail: "director.gogreenplus.in@gmail.com",
+  instagram: "https://www.instagram.com/gogreenplus.in/",
+  facebook: "https://www.facebook.com/profile.php?id=61583702428569",
+};
+
+const PRODUCTS = [
+  {
+    id: "litter-picker-machine",
+    title: "Litter Picker Machine",
+    line: "VAYU",
+    img: IMG + "products/vayu-cut.webp",
+    cut: true,
+    vehicle: { ratio: "1800 / 1301", len: "Up to 2500 mm", ht: "Up to 1700 mm" },
+    description:
+      "The Go Green Plus Litter Picker Machine is a fully electric waste collection solution designed for efficient outdoor cleaning and urban sanitation. Engineered for Indian operating conditions, it enables rapid collection of dry waste such as plastic, paper, and packaging materials while maintaining zero-emission performance. With extended battery life, low-noise operation, GPS tracking, and a lightweight design, it delivers reliable, sustainable, and cost-effective cleaning for municipalities, institutions, and commercial spaces.",
+    specifications: [
+      "Extended Battery Runtime for Long Operational Hours",
+      "High-Efficiency Collection System for Plastic, Paper, and Packaging Waste",
+      "100% Electric Zero-Emission Operation",
+      "Lightweight and Agile Design for Narrow Lanes and Crowded Areas",
+      "Ultra-Low Noise Output for Noise-Sensitive Environments",
+      "Rugged and Durable Construction for Indian Conditions",
+      "High Coverage Efficiency for Faster Area Cleaning",
+      "GPS Tracking with Go Green Plus App Integration",
+    ],
+    table: [
+      ["Maximum Machine length", "Up to 2500", "mm"],
+      ["Maximum Machine width", "Up to 1000", "mm"],
+      ["Maximum Machine height", "Up to 1700", "mm"],
+      ["Gross Machine weight", "Up to 600", "kg"],
+      ["Airflow of operational system", "Min. 800", "m³/hr"],
+      ["Collection bag / Container capacity with compaction", "240", "Liters"],
+      ["Noise Level during operation", "55-65", "db"],
+      ["Battery details", "48 V, 100-145 AH (LiFePO4)", ""],
+      ["Daily Battery life during overall suction and traction application", "6-8", "hr"],
+      ["Turbine Motor", "High rpm @3000", "1.5 kw, 48 V"],
+      ["Traction Motor", "High rpm @3000", "1.2 kw, 48 V"],
+      ["Water tank capacity", "2-3", "Liters"],
+      ["Charge system", "Off-board charging system", ""],
+      ["Front LED", "Yes", ""],
+      ["Horn", "Yes", ""],
+      ["Beacon working light", "Yes", ""],
+      ["Body type", "Metal / Polyester", ""],
+      ["Chasis material", "Galvanised", ""],
+      ["Speed", "8", "Km/h"],
+      ["Brake system", "Electromagnetic", ""],
+      ["Suction fan", "Aluminium radial type", ""],
+      ["GPS Tracking system", "Yes", ""],
+    ],
+  },
+  {
+    id: "door-to-door-garbage-collector",
+    title: "Smart Door-to-Door Collector",
+    line: "SegreGO",
+    img: IMG + "products/segrego-cut.webp",
+    cut: true,
+    vehicle: { ratio: "1767 / 1388", len: "Up to 3000 mm", ht: "Up to 1800 mm" },
+    description:
+      "The Go Green Plus Smart Door-to-Door Collector is an advanced electric waste collection vehicle designed to streamline municipal and community waste management. Equipped with smart segregation capabilities, GPS tracking, and app-based monitoring, it enables efficient source-level waste collection while improving operational transparency. Its low-noise performance, extended battery life, and worker-friendly design make it ideal for residential neighborhoods, institutions, townships, and urban sanitation programs.",
+    specifications: [
+      "100% Electric Operation with Zero Emissions",
+      "Smart Waste Segregation for Wet, Dry, Sanitary, and Recyclable Waste",
+      "GPS Tracking System for Real-Time Monitoring and Route Optimization",
+      "App-Based Monitoring and Data-Driven Collection Management",
+      "Long Battery Life with 8–10 Hours of Continuous Operation",
+      "Low-Noise Performance for Residential and Sensitive Areas",
+      "Integrated Audio Awareness System for Public Outreach Campaigns",
+      "Ergonomic, Safe, and Worker-Friendly Design",
+    ],
+    table: [
+      ["Maximum Machine length", "Up to 3000", "mm"],
+      ["Maximum Machine width", "Up to 1500", "mm"],
+      ["Maximum Machine Height", "Up to 1800", "mm"],
+      ["Gross Machine weight", "Up to 750", "kg"],
+      ["Containers capacity with compaction", "240", "Liters"],
+      ["Noise Level during operation", "40-50", "db"],
+      ["Battery details", "48 V, 100-145 AH (LiFePO4)", ""],
+      ["Daily Battery life during overall suction and traction application", "8-10", "hrs"],
+      ["Traction Motor", "High rpm @3000", "1.2 kw, 48 V"],
+      ["Charge system", "Off-board charging system", ""],
+      ["Front LED", "Yes", ""],
+      ["Horn", "Yes", ""],
+      ["Beacon working light", "Yes", ""],
+      ["Body type", "Metal/Polyester", ""],
+      ["Chasis material", "Galvanised", ""],
+      ["Speed", "30", "Km/h"],
+      ["Brake system", "Electromagnetic", ""],
+      ["GPS Tracking system", "Yes", ""],
+      ["Awareness Speaker", "Yes", ""],
+    ],
+  },
+  {
+    id: "bio-gas-plant",
+    title: "Bio Gas Plant",
+    img: IMG + "products/biogas-cut.webp",
+    cut: true,
+    description:
+      "A sustainable solution that converts organic waste into clean biogas and nutrient-rich slurry. Helps manage waste efficiently while generating renewable energy for households or small industries. Reduces carbon footprint and promotes circular energy use.",
+    specifications: [
+      "Scalable and Modular Plant Design",
+      "Fully Automated Operation",
+      "Advanced Anaerobic Digestion Technology",
+      "High Biogas Yield and Energy Recovery",
+      "Produces Organic Fertilizer as a By-Product",
+      "SWM Rules 2026 & CPCB Compliant",
+      "Suitable for Commercial, Industrial, Municipal, and Residential Use",
+      "Decentralized Waste-to-Energy Solution",
+    ],
+    additionalImage: IMG + "products/biogas-how-to-use.webp",
+  },
+  {
+    id: "owc",
+    title: "OWC",
+    img: IMG + "products/owc-cut.webp",
+    cut: true,
+    description:
+      "At Go Green Plus, we engineer advanced Organic Waste Composting (OWC) Machines that convert daily organic waste into nutrient-rich compost quickly, hygienically, and efficiently. Designed for Indian conditions and compliance standards, our systems enable institutions to manage waste at source while reducing environmental impact. From residential societies to municipalities and large commercial facilities, our OWC solutions deliver fast processing (24–72 hours) with odor-free operation and minimal manual intervention.",
+    specifications: [
+      "Rapid Composting: Converts organic waste into compost within 24–72 hours",
+      "Odor-Free Operation with Fully Enclosed Processing System",
+      "Compliant with SWM Rules 2026 and CPCB Guidelines",
+      "Reduces Waste Volume by up to 80–90%",
+      "Energy-Efficient Design with Low Power Consumption",
+      "Optimized Operating and Maintenance Costs",
+      "User-Friendly Automated Control System",
+      "Suitable for Residential, Commercial, Institutional, and Municipal Applications",
+    ],
+    additionalImage: IMG + "products/owc-how-it-works.webp",
+    howSubtitle: true,
+  },
+  {
+    id: "biocng",
+    title: "BIO-CNG",
+    img: IMG + "products/biocng-aerial.webp",
+    cut: false,
+    description:
+      "At Go Green Plus, we specialize in installing and maintaining advanced Bio-CNG plants that transform organic waste into renewable energy. Our solutions enable communities, businesses, and institutions to convert wet waste into clean fuel while producing nutrient-rich bio-fertilizer. Designed for Indian conditions and compliance, our Bio-CNG systems ensure efficient, odor-free operation with minimal manual intervention. From households to large-scale facilities, we deliver reliable, scalable biogas technology that reduces environmental impact and creates sustainable energy independence.",
+    specifications: [
+      "Plant Capacity: 5-500 TPD (Tonnes Per Day)",
+      "High-Efficiency Gas Purification System",
+      "Automated and Low-Maintenance Operations",
+      "End-to-End Project Execution: Design, Installation & AMC",
+      "Patented VPAS Technology for High Yield and Low Downtime",
+      "Suitable for Transport Fuel, Industrial Heating, Power Generation, and Cooking Applications",
+      "Integrated Waste-to-Energy and Waste Management Solution",
+      "Produces Clean Bio-CNG and Nutrient-Rich Bio-Fertilizer",
+      "Reduces Operating Costs and Improves Resource Utilization",
+      "Supports ESG Goals and Sustainable Waste Handling",
+    ],
+    additionalImage: IMG + "products/biocng-feedstock.webp",
+  },
+  {
+    id: "plastic_collection",
+    title: "Plastic Collection Bins",
+    img: IMG + "products/plastic-bank.webp",
+    cut: false,
+    description:
+      "Promote recycling and environmental awareness with the Go Green Plus Plastic Collection Bank. Designed for public spaces, schools, offices, parks, and tourist destinations, this innovative solution combines plastic waste collection with engaging awareness messaging to encourage responsible disposal habits.",
+    specifications: [
+      "Material: MS Wire Mesh",
+      "Finish: Synthetic Enamel Paint Coating",
+      "Capacity: 0.53 Cubic Meter (18.7 CFT) (Customisable)",
+      "Size: Approx. 4 ft*3 ft (Customisable)",
+      "Outdoor-ready and Weather Resistant",
+      "Custom Branding and Awareness Graphics Available",
+      "Ideal for Government Departments, Municipalities, Schools, CSR Projects, Residential Complexes, and Public Spaces",
+    ],
+  },
+];
+
+const FUTURE = [
+  { id: "waste-to-fuel", title: "Waste-to-Fuel Systems", img: IMG + "products/waste-to-fuel.webp",
+    description: "An innovative system that converts organic and plastic waste into clean, usable fuel. Helps reduce landfill load while generating energy for local use. Supports circular economy and sustainable living." },
+  { id: "pond-water-restoration", title: "Pond Water Restoration Units", img: IMG + "products/pond-restoration.webp",
+    description: "Cutting-edge technology for reviving polluted ponds and improving water clarity. Naturally boosts aquatic biodiversity and controls harmful algae. Ideal for community ponds and urban water bodies." },
+  { id: "road-water-spray", title: "Road Water Spray", img: IMG + "products/road-water-spray.webp",
+    description: "Designed to spray treated water on roads to suppress dust and lower ambient temperatures. Useful in cities and industrial zones during dry seasons. Promotes cleaner air and healthier urban spaces." },
+];
+const ALL_SOLUTIONS = [...PRODUCTS, ...FUTURE.map((f) => ({ ...f, dev: true }))];
+
+const SPACES = [
+  { title: "Public & Institutional", icon: "building", img: IMG + "places/semi-govt.webp", pos: "center 22%",
+    items: ["Government Offices", "Semi-Government Buildings", "Private Institutions", "Public Toilets", "Heritage Sites", "Tourist Attractions", "Parks & Gardens"] },
+  { title: "Sports & Entertainment", icon: "trophy", img: IMG + "products/vayu-cut.webp", cut: true,
+    items: ["Sports Complexes", "Stadiums", "Event Venues"] },
+  { title: "Residential & Lifestyle", icon: "home", img: IMG + "products/segrego-cut.webp", cut: true,
+    items: ["Private Homes", "Apartments & Housing Complexes"] },
+  { title: "Commercial & Retail", icon: "bag", img: IMG + "places/market-street.webp", pos: "center 35%",
+    items: ["Shops & Showrooms", "Restaurants & Cafes", "Hotels & Resorts", "Petrol Pumps", "Cinema Halls"] },
+  { title: "Healthcare & Education", icon: "heart", img: IMG + "places/washroom-care.webp", pos: "center 35%",
+    items: ["Hospitals & Clinics", "Colleges & Universities", "Coaching Centres", "Hostels", "Schools"] },
+];
+
+/* Team — names, roles and bios from src/data/data.ts; Administration from the current About page. */
+const TEAM = {
+  executives: [
+    { id: "bilash_chandra_roy", name: "Dr. Bilash Chandra Roy", role: "Director & Founder, Go Green Plus", kind: "Executive", img: IMG + "team/bilash-chandra-roy.webp", pos: "center 20%",
+      email: "director.gogreenplus.in@gmail.com", linkedIn: "https://www.linkedin.com/in/dr-bilash-chandra-roy-1b5a13143/", scholar: "https://scholar.google.com/citations?user=7FBH1sAAAAAJ&hl=en",
+      about: "Dr. Bilash Chandra Roy is the Director and Founder of “Go Green Plus”, a cleantech startup committed to transforming urban waste management through sustainable innovation, smart electric mobility, and digital integration. Dr. Roy holds M.Sc. and Ph.D. degree in Chemistry. Dr. Roy specializes in the synthesis of transition metal complexes and luminescent lanthanide-based materials for catalysis, biophysical applications, and explosive detection. His research, which has resulted in over ten high-impact publications in journals such as Inorganic Chemistry, Soft Matter, and Coordination Chemistry Reviews, is backed by hands-on expertise in advanced characterization techniques and materials design. He has also authored two insightful book chapters on supramolecular chemistry and heterometallic magnetic materials. Dr. Roy’s patented invention of a portable explosive detection kit further reflects his drive to integrate chemistry, innovation, and social impact, making him a dynamic force at the intersection of research and sustainable enterprise. Dr. Roy's vision through Go Green Plus aligns deeply with his academic ethos - channeling scientific knowledge into real-world sustainability. The company develops compact electric vacuum cleaner vehicles for public sanitation, door-to-door garbage collection EVs for urban and residential zones, and a digital platform for real-time monitoring operations, customer engagement, and government accountability. Under his leadership, Go Green Plus is also piloting biogas conversion units to convert organic waste into renewable energy, creating a closed-loop, tech-enabled green solution. The startup not only addresses core environmental issues but also supports national goals like Swachh Bharat and Smart City missions. By combining advanced research with grassroots implementation, Dr. Roy is fostering a culture of clean technology and environmental responsibility. His efforts continue to inspire innovation- driven entrepreneurship rooted in science, service, and sustainability." },
+    { id: "samik_das", name: "Mr. Samik Das", role: "Co-Founder, MD & CEO, Go Green Plus", kind: "Executive", img: IMG + "team/samik-das.webp", pos: "center 25%",
+      about: "Mr. Samik Das is the Co-Founder, Managing Director, and Chief Executive Officer (CEO) of Go Green Plus, where he spearheads the company’s strategic growth, product innovation, and sustainable impact in the urban waste management and green mobility sector. A B.Tech graduate in Electronics and Communication Engineering and currently pursuing his MBA, Mr. Das combines strong technical expertise with emerging business leadership to drive the startups mission forward. He completed a SCADA internship at GAIL, where he gained valuable experience in automation and system control technologies, which now form the backbone of Go Green Plus’s digital waste monitoring and smart city infrastructure. His early engineering project on temperature dependent automatic fan control reflects his hands-on problem-solving approach and energy efficient thinking. Beyond his technical and entrepreneurial roles, Mr. Das is actively engaged in social service, contributing to environmental awareness campaigns, community clean-up drives, and youth development programs. As Co-Founder, he plays a critical role in shaping the company’s portfolio, which includes electric street vacuum cleaners, door-to-door EV garbage collection systems, and integrated platforms for GPS based monitoring, mobile app services, and waste-to-biogas conversion. Under his visionary leadership, Go Green Plus is not only delivering innovative, affordable, and scalable solutions but also contributing to national missions like Swachh Bharat and Smart Cities. Mr. Das’s entrepreneurial drive and social commitment make him a changemaker in building a cleaner, greener, and smarter India." },
+  ],
+  technology: [
+    { id: "debaprasadpaul", name: "Debaprasad Paul", role: "Technical Advisor", kind: "IT Team", img: IMG + "team/debaprasad-paul.webp", pos: "center 20%", linkedIn: "https://www.linkedin.com/in/debaprasad-paul/",
+      about: "Debaprasad Paul is a Senior Software Engineer with a strong background in designing and delivering large-scale financial systems. His career spans building robust banking applications that power transactions for millions of users and developing platforms that enable global securities lending for institutional clients. Throughout his journey, Debaprasad has focused on creating solutions that simplify complex financial workflows without compromising on security or performance. He excels at translating business requirements into intuitive, user-friendly experiences that meet the highest standards of reliability and compliance. Passionate about solving real-world problems through technology, Debaprasad combines technical expertise with a deep understanding of financial ecosystems. He takes pride in building products that drive tangible value for businesses and make financial processes seamless for end users." },
+    { id: "mrigangkadatta", name: "Mrigangka Datta", role: "Developer", kind: "IT Team", img: IMG + "team/mrigangka-datta.webp", pos: "center 30%", linkedIn: "https://www.linkedin.com/in/mrigangkad",
+      about: "Mrigangka Datta is a 23-year-old Software Developer currently working at a startup in Bangalore. He builds scalable web and backend systems, with a focus on clean architecture, reliability, and solving real-world engineering problems." },
+  ],
+  electrical: [
+    { id: "sagar_mallik", name: "Er. Sagar Mallik", role: "Head (Electrical Division)", kind: "Electrical Team", img: IMG + "team/sagar-mallik.webp", pos: "center 20%",
+      about: "Er. Sagar Mallik is an accomplished electrical engineer, researcher, and passionate advocate for sustainable mobility. As a Technology Contributor at Go Green Plus, he brings deep technical expertise in green transportation and energy systems to drive innovative solutions for a cleaner future. Currently pursuing his Ph.D. in Electrical Engineering at the National Institute of Technology Agartala (NIT Agartala) since 2023, Sagar holds an M.Tech in Electrical Engineering with a specialization in Power and Integrated Energy Systems from the same institute (2021–2023). His research focuses on cutting-edge technologies including Plug-in Hybrid Electric Vehicles (PHEVs), electric vehicle drive systems, regenerative braking, and advanced energy management solutions. With a strong academic foundation and hands-on research experience, Sagar is dedicated to bridging the gap between theoretical innovation and practical green technology applications. He actively contributes to the development of efficient, eco-friendly transportation systems and frequently shares educational content online, inspiring the next generation of engineers through physics lectures and technical insights. At Go Green Plus, Er. Sagar Mallik combines his academic rigor with a mission-driven approach to accelerate India’s transition toward sustainable energy and green mobility." },
+  ],
+  administration: [
+    { id: "tuhin_paul", name: "Tuhin Paul", role: "Administrator", kind: "Administration", img: IMG + "team/tuhin-paul.webp", pos: "center 25%", about: "" },
+  ],
+  advisors: [
+    { id: "s_dasgupta", name: "Prof. (Dr.) Sabyasachi Dasgupta", kind: "Advisor", img: IMG + "team/sabyasachi-dasgupta.webp", pos: "center 25%",
+      about: "Prof. Sabyasachi Dasgupta is a leading academic in the field of forestry and environmental science, currently serving as Professor and Head of the Department of Forestry and Biodiversity at Tripura University (Central). With nearly two decades of experience in teaching, research, and institutional leadership, he brings deep expertise in biodiversity conservation, ecosystem services, forest ecology, and environmental impact assessment. He holds a Ph.D. in Forestry (Ecology & Environment) from the Wildlife Institute of India, FRI University, and has taught in premier institutions including HNB Garhwal Central University and Central Agricultural University. Prof. Dasgupta has published over 45 research papers and book chapters. His research spans a wide range of ecological themes from climate change impacts in the Himalayas to bamboo biodiversity and sacred groves in Northeast India. He is also actively involved in environmental policy as a member of the State Level Environment Impact Assessment Authority and serves as Vice President of the North East Chapter of the Indian Ecological Society. As an Advisor to Go Green Plus, Prof. Dasgupta brings scientific rigor and strategic guidance in shaping ecological sustainability, afforestation, and biodiversity initiatives making him an invaluable asset to the company’s mission for green development." },
+    { id: "s_nath_choudhury", name: "Prof. (Dr.) Swarnali Nath Choudhury", kind: "Advisor", img: IMG + "team/swarnali-nath-choudhury.webp", pos: "center 25%",
+      about: "Dr. Swarnali Nath Choudhury is an accomplished academician, researcher, and academic leader with over 20 years of experience in the field of Chemistry and higher education. She holds an M.Sc. in Organic Chemistry and a Ph.D. in Medicinal Chemistry from Assam University, along with an M.Tech. in Petroleum Technology from Dibrugarh University. Currently, she serves as Professor of Chemistry and Dean of Placement at ICFAI University Tripura, where she plays a pivotal role in academic excellence and industry engagement. Dr. Choudhury’s research interests lie in Natural Products, Medicinal Chemistry, and Phytopharmacology, with a strong focus on traditional medicinal plants and their applications in tribal healthcare systems. She has published extensively in peer-reviewed journals and contributed chapters to academic books, reflecting her commitment to research and innovation. Her work bridges modern science with indigenous knowledge, making it both impactful and socially relevant. As an Advisor to our company Go Green Plus, Dr. Choudhury supports us by offering scientific and strategic guidance, fostering academia-industry collaboration, and helping to design effective training programs to enhance the skills of our employees and align them with current industry needs." },
+    { id: "shyamal_majumder", name: "Er. Shyamal Majumder", kind: "Advisor", img: IMG + "team/shyamal-majumder.webp", pos: "center 25%",
+      about: "Er. Shymal Majumder is a distinguished civil engineer and entrepreneur, best known as the founder of CS Cube Consultation, a leading construction consultancy firm based in Agartala, Tripura. With a career marked by technical expertise, leadership, and innovation, he has made significant contributions to the infrastructure development of the region. Born and raised in Jadavpur, West Bengal, Shymal Majumder pursued his Bachelor of Technology (B.Tech.) in Civil Engineering from Jadavpur University, one of the most prestigious institutions in India. After completing his degree, he gained extensive professional experience working with several renowned construction consultancy firms, where he honed his skills in project planning, design, and execution. In 2007, driven by his vision of providing quality engineering and consultancy services, he established CS Cube Consultation in Agartala. Under his leadership, the company has grown remarkably, successfully handling a wide range of projects including residential, commercial, and infrastructure developments. Over the years, CS Cube Consultation has become a trusted name in the construction sector in Tripura, thanks to his commitment to innovation, sustainability, and client satisfaction. With his entrepreneurial spirit and decades of experience, Er. Shymal Majumder has not only built a successful enterprise but has also contributed to shaping the urban landscape of Agartala. His journey from Jadavpur to becoming a prominent figure in Tripura’s construction industry stands as an inspiration for aspiring engineers and entrepreneurs alike. Today, with his vast experience, he extends his guidance to Go Green Plus, strengthening its mission with sustainable infrastructure solutions, smart project execution, and eco-friendly innovations for a cleaner Tripura." },
+    { id: "abhijit_saha", name: "Mr. Abhijit Saha", kind: "Advisor", img: IMG + "team/abhijit-saha.webp", pos: "center 30%",
+      about: "Abhijit Saha is a dynamic entrepreneur and the Founder-Director of Narayandip, a leading retail partner for top garment brands in Agartala, Tripura. With nearly two decades of experience, he has been instrumental in shaping the branded fashion retail, telecom, and distribution sectors in the region. Starting his journey in 2006 as a channel partner with Airtel, Abhijit expanded into DTH distribution and logistics by 2010. In 2013, he ventured into premium retail with the launch of the U.S. Polo Assn. store and steadily grew his portfolio to include major brands like ARROW, Pepe Jeans, Killer Jeans, Being Human, and CRIMSOUNE Club. Briefly entering electronics distribution with Samsung Mobile in 2021, Mr. Abhijit Saha has consistently demonstrated a keen eye for growth and diversification. Today, he is focused on strengthening his retail presence while exploring new ventures, earning wide respect in Tripura’s business community for his strategic vision and dedication to regional development." },
+    { id: "mrinal_kanti_deb", name: "Dr. Mrinal Kanti Deb", kind: "Advisor", img: IMG + "team/mrinal-kanti-deb.webp", pos: "center 30%",
+      about: "Dr. M.K. Deb is an esteemed academic and researcher in the field of rural development and migration studies. He currently serves as an Assistant Professor in the Faculty of Humanities and Social Sciences at Assam down town University, where he also coordinates the Institution’s Innovation Council (IIC). He holds both Master’s and Ph.D. degrees in Rural Management and Development. Dr. Deb has an extensive research portfolio, having published 7 journal articles and 9 book chapters in areas such as labor migration, tribal livelihoods, rural transformation, and social policy. His work includes empirical studies on Bangladesh-Tripura migration, livelihood shifts among the Kuki tribe, and the impact of welfare programs like MGNREGA on rural communities. He also developed innovative approaches for measuring tribal living standards using tools like Principal Component Analysis. As an Advisor to Go Green Plus, Dr. Deb contributes deep academic insight and grassroots experience to support the company’s vision for inclusive, sustainable development. His expertise enhances Go Green Plus focus on empowering rural communities through data-driven, environmentally conscious strategies." },
+    { id: "swapan_das", name: "Dr. Swapan Das", kind: "Advisor", img: IMG + "team/swapan-das.webp", pos: "center 30%",
+      about: "Dr. Swapan Das is a highly accomplished engineering professional with over 15 years of experience in Indian Railways and specialized academic expertise in Municipal Solid Waste Management. He holds an M.Tech. in Mechanical Engineering and a Ph.D. in Municipal Solid Waste Management from one of India’s premier technical institution-Indian Institute of Engineering Science and Technology, Shibpur, West Bengal. With a deep commitment to sustainable development and environmental engineering, Dr. Das has published 6 research papers in international journals, presented 5 papers at international conferences, and contributed 1 book chapter and 3 national conference papers focusing primarily on solid waste treatment, sustainable urban systems, and waste to energy technologies. Alongside his technical career in public infrastructure, Dr. Das also serves as the Chief Advisor of Ultimate Car Care, a car manufacturing cum modern service company, where he plays a pivotal role in process optimization, sustainable design, and operational efficiency. His contributions support innovation in eco-friendly automotive solutions and advanced servicing infrastructure. As an Advisor to Go Green Plus, Dr. Das will play a key role in guiding the development of the company’s two upcoming electric vehicles (EVs). His expertise in mechanical systems, process design, and sustainable technology integration makes him an invaluable asset in driving forward Go Green Plus’s mission of clean mobility and eco-conscious engineering." },
+    { id: "kushal_deb", name: "Advocate Kushal Deb", kind: "Advisor", img: IMG + "team/kushal-deb.webp", pos: "center 20%",
+      about: "Advocate Kushal Deb is a highly respected legal practitioner with a distinguished track record in civil, criminal, family, environmental and consumer law. With a large number of successfully handled cases and a renowned presence at the Tripura High Court, he is recognized for his sharp legal acumen, courtroom command, and commitment to justice. Over the years, Advocate Deb has built a reputation for delivering strategic legal solutions across a wide spectrum of matters, earning the trust of clients and peers alike. His ability to interpret and apply the law with precision makes him a sought-after counsel in both complex litigation and everyday legal affairs. As a Legal Advisor to Go Green Plus, Advocate Deb brings unmatched legal insight and experience to guide the organization in regulatory compliance, risk mitigation, and contractual governance. His involvement strengthens the company's foundation with lawful integrity and ensures that all initiatives align with current legal standards and ethical practices." },
+    { id: "manik_chakraborty", name: "Dr Manik Chakraborty", kind: "Advisor", img: IMG + "team/manik-chakraborty.webp", pos: "center 25%",
+      about: "Dr. Manik Chakraborty is an accomplished academician and researcher in the field of Commerce, currently serving as an Assistant Professor in the Department of Commerce at St. Xavier’s University, Kolkata. He ranked 1st in the Higher Secondary (+2) Examination conducted by the Tripura Board of Secondary Education in 2011 and received the Economic Science Society of Tripura (ESSOT) award for securing the top position in the same year. He completed his B.Com (Honours) from Goenka College of Commerce and Business Administration, Kolkata, where he was awarded for outstanding performance in 2014. Dr. Chakraborty obtained his M.Com degree from the University of Calcutta in 2016. He qualified both the National Eligibility Test (NET) conducted by UGC and the State Level Eligibility Test (SLET) in 2017. He was awarded a Ph.D. in Commerce from Tripura (Central) University in 2024 for his research on “Impact of Capital Structure on Corporate Financial Performance: Evidence from NSE Listed Public Companies in India.” His area of specialization lies in Accounting and Finance, with strong research interests in corporate finance, capital structure, and regional economic development. Before joining St. Xavier’s University, Dr. Chakraborty served as a Guest Faculty at MBB College, BBM College, and Tripura (Central) University, and later as an Assistant Professor at Holy Cross College, Agartala. His academic journey reflects a blend of excellence, dedication, and a strong commitment to advancing commerce education and research. As an advisor of Go Green Plus, Dr. Chakraborty will contribute significantly to the Go Green Plus initiative by guiding its financial planning, cost benefit analysis, and PPP framework. His expertise in corporate finance and economic impact assessment will help design a sustainable and scalable revenue model, ensuring that the project aligns with both economic viability and environmental sustainability goals of Tripura’s clean-tech tourism ecosystem." },
+  ],
+};
+const ALL_PEOPLE = [...TEAM.executives, ...TEAM.technology, ...TEAM.electrical, ...TEAM.administration, ...TEAM.advisors];
+
+/* Careers — from the current Job Search, Internships and Events pages */
+const JOBS = [
+  { id: 1, title: "EV Charging Station Operator", company: "GoGreen Energy", location: "Agartala, Tripura", type: "Full-time", postedDate: "2 days ago", salary: "₹3.5 LPA - ₹5 LPA",
+    description: "We are looking for an experienced EV Charging Station Operator to monitor, maintain, and assist customers at our charging stations across Tripura. You will ensure smooth operations and support eco-friendly commuting." },
+  { id: 2, title: "Solar Panel Installer", company: "GoGreen Energy", location: "Udaipur, Tripura", type: "Full-time", postedDate: "1 week ago", salary: "₹3 LPA - ₹4.5 LPA",
+    description: "Join our renewable team as a Solar Panel Installer. You'll work on projects installing and maintaining solar panels for residential and commercial clients in Tripura." },
+  { id: 3, title: "Battery Recycling Technician", company: "GoGreen Energy", location: "Remote (Tripura Region)", type: "Contract", postedDate: "3 days ago", salary: "₹400 - ₹600/hour",
+    description: "Looking for a skilled technician to handle battery recycling and eco-friendly disposal processes. Knowledge of safety standards and recycling practices required." },
+  { id: 4, title: "Sustainability Project Manager", company: "GoGreen Energy", location: "Dharmanagar, Tripura", type: "Full-time", postedDate: "5 days ago", salary: "₹6 LPA - ₹8 LPA",
+    description: "We need a Project Manager to lead sustainability initiatives in Tripura. You'll coordinate teams to deliver green energy solutions and eco-conscious infrastructure." },
+  { id: 5, title: "Green Fleet Technician", company: "GoGreen Energy", location: "Belonia, Tripura", type: "Part-time", postedDate: "1 day ago", salary: "₹4 LPA - ₹5.5 LPA",
+    description: "Join our maintenance team to service and repair electric vehicles in our eco-friendly fleet. Experience with EV systems and diagnostics required." },
+];
+const INTERNSHIPS = [
+  { id: 1, title: "Project Intern", company: "GoGreen Energy", location: "Agartala, Tripura", type: "Full-time", postedDate: "January 2026", salary: "Not Disclosed",
+    description: "Tech Stack : Html,CSS,JS,React, Github,NodeJs or Springboot, MongoDB or Oracle Db" },
+];
+const EVENTS = [
+  { id: 1, title: "GoGreen EV Awareness Camp", company: "GoGreen Energy", location: "Agartala, Tripura", date: "15th September 2025", d: "15", m: "Sep", time: "10:00 AM - 2:00 PM",
+    description: "An interactive camp to spread awareness about electric vehicles, sustainability, and green energy adoption in Tripura." },
+  { id: 2, title: "Solar Panel Installation Workshop", company: "GoGreen Energy", location: "Udaipur, Tripura", date: "25th September 2025", d: "25", m: "Sep", time: "11:00 AM - 4:00 PM",
+    description: "Hands-on training session on solar panel installation and maintenance for students and technicians." },
+  { id: 3, title: "Battery Recycling Drive", company: "GoGreen Energy", location: "Dharmanagar, Tripura", date: "1st October 2025", d: "01", m: "Oct", time: "9:00 AM - 12:00 PM",
+    description: "Join us to responsibly recycle old EV batteries and learn about safe eco-friendly disposal practices." },
+];
+
+
+/* ==========================================================================
+   GoGreen+ v2 — views, router and interactions
+   ========================================================================== */
+const ICONS = {
+  arrowR: "M5 12h14M13 6l6 6-6 6", arrowL: "M19 12H5M11 18l-6-6 6-6", chevD: "m6 9 6 6 6-6", chevR: "m9 6 6 6-6 6",
+  phone: "M5.5 4h3.2l1.8 4.6-2.3 1.5a11.5 11.5 0 0 0 5.7 5.7l1.5-2.3 4.6 1.8v3.2A1.6 1.6 0 0 1 18.4 20 15 15 0 0 1 4 5.6 1.6 1.6 0 0 1 5.5 4Z",
+  mail: "M4 5.5h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1ZM3.5 6.5l8.5 6.5 8.5-6.5",
+  pin: "M12 21s-7-6.1-7-11.4a7 7 0 0 1 14 0C19 14.9 12 21 12 21ZM12 12a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Z",
+  download: "M12 4v11M7 10l5 5 5-5M5 20h14", check: "m5 12.5 4.5 4.5L19 7.5",
+  truck: "M3 6.5h10.5v9H3zM13.5 9.5h4l3 3.2v2.8h-7M7 18.5a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM17 18.5a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z",
+  sparkle: "M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9L12 3.5ZM18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2ZM5.5 15.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6.6-1.4Z",
+  recycle: "M7.2 19.5H5a1.6 1.6 0 0 1-1.4-2.4l2.6-4.4M9.6 6.4l1-1.7a1.6 1.6 0 0 1 2.8 0l2.6 4.4M16.8 13.3l2.6 4.4a1.6 1.6 0 0 1-1.4 2.4h-5M14.5 22l-2.2-1.9 2.2-1.9M4.3 9.9l2 3 3.1-1.2M19.4 7.8 16.8 9.6l-3-1",
+  leaf: "M5 19c0-8 5-13.5 14-14 0 9-5.5 14-14 14ZM5 19l7.5-7.5",
+  building: "M4 21V5.5L12 3v18M12 8h8v13M2.5 21h19M7.5 8h1.5M7.5 12h1.5M7.5 16h1.5M15.5 12h1.5M15.5 16h1.5",
+  trophy: "M8 4h8v5a4 4 0 0 1-8 0V4ZM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4v3h-4z",
+  home: "M4 11 12 4l8 7M6 9.5V20h12V9.5M10 20v-5.5h4V20",
+  bag: "M5 8h14l-1 12H6L5 8ZM9 8V6.5a3 3 0 0 1 6 0V8",
+  heart: "M12 20s-8-4.6-8-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 8 2.4C20 15.4 12 20 12 20Z",
+  search: "M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14ZM20 20l-4-4", filter: "M4 5h16l-6 7.5V19l-4-2v-4.5L4 5Z",
+  menu: "M4 7h16M4 12h16M4 17h16", close: "M6 6l12 12M18 6 6 18",
+  user: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4.5 20.5a7.5 7.5 0 0 1 15 0",
+  linkedin: "M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2ZM8 10.5V17M8 7.2v.1M12 17v-6.5M12 13.3a2.6 2.6 0 0 1 5.2 0V17",
+  instagram: "M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5ZM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM17.3 6.7v.1",
+  facebook: "M14 21v-7.5h2.8l.5-3.4H14V8c0-1 .4-1.6 1.7-1.6h1.7V3.3A21 21 0 0 0 15 3.1c-2.5 0-4.2 1.5-4.2 4.3v2.7H8v3.4h2.8V21",
+  scholar: "M12 4 2 10l10 6 10-6-10-6ZM6 12.4V17c3.2 2.6 8.8 2.6 12 0v-4.6",
+  calendar: "M4 5.5h16a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6.5a1 1 0 0 1 1-1ZM3 10h18M8 3v4M16 3v4",
+  clock: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 7v5l3.2 2",
+  briefcase: "M4 7h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1ZM8.5 7V5a1.5 1.5 0 0 1 1.5-1.5h4A1.5 1.5 0 0 1 15.5 5v2M3 13h18",
+  award: "M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM8.5 13.8 7 21l5-3 5 3-1.5-7.2",
+  shield: "M12 3l8 3v6c0 5-3.5 8.2-8 9-4.5-.8-8-4-8-9V6l8-3ZM9 12l2 2 4-4",
+  users: "M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM2.5 20a6.5 6.5 0 0 1 13 0M16 4.3a3.5 3.5 0 0 1 0 6.4M18.5 14.4A6.5 6.5 0 0 1 21.5 20",
+  globe: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z",
+  rupee: "M7 4h10M7 8.5h10M7 4c4.5 0 6.5 2 6.5 4.5S11.5 13 7 13l8 7",
+  eye: "M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12ZM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
+  lock: "M6 10.5h12a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-8.5a1 1 0 0 1 1-1ZM8 10.5V7.5a4 4 0 0 1 8 0v3",
+  doc: "M6 3h8l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1ZM14 3v4h4M8.5 12h7M8.5 16h7",
+};
+const ic = (n, cls = "") => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${ICONS[n] || ""}"/></svg>`;
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const mailto = (subject, body = "") => `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}${body ? "&body=" + encodeURIComponent(body) : ""}`;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ABBR = /^(?:\(?(?:Dr|Mr|Mrs|Ms|Er|Prof|Sc|St|Jr|Sr|No|vs|etc|Govt|Pvt|Ltd)\.\)?|.*\.\w+\.?|[A-Z]\.)$/;
+/* sentence split that never drops text and keeps "Dr.", "M.Sc.", "Ph.D." intact */
+const sentences = (t) => { const w = String(t).split(/\s+/).filter(Boolean), out = []; let cur = [];
+  w.forEach((x, i) => { cur.push(x); const nx = w[i + 1]; if (/[.!?]["”’)]?$/.test(x) && !ABBR.test(x) && (!nx || /^["“(]?[A-Z0-9]/.test(nx))) { out.push(cur.join(" ")); cur = []; } });
+  if (cur.length) out.push(cur.join(" ")); return out; };
+const firstSentence = (t) => sentences(t)[0] || t;
+const splitBio = (t) => { const s = sentences(t), o = []; for (let i = 0; i < s.length; i += 3) o.push(s.slice(i, i + 3).join(" ")); return o; };
+const byId = (id) => ALL_SOLUTIONS.find((p) => p.id === id);
+const two = (n) => String(n).padStart(2, "0");
+
+/* ---------- background vector shapes ---------- */
+const V_LEAF = `<svg viewBox="0 0 120 120"><path d="M14 106C14 52 50 16 106 14c0 56-36 92-92 92Z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M14 106 80 40M40 80c12-1 24 0 32 4M54 66c9-1 18 0 25 3M28 92c8-1 16 0 22 3" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>`;
+const V_LEAF_FILL = `<svg viewBox="0 0 120 120"><defs><linearGradient id="lf" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="currentColor" stop-opacity=".9"/><stop offset="1" stop-color="currentColor" stop-opacity=".25"/></linearGradient></defs><path d="M14 106C14 52 50 16 106 14c0 56-36 92-92 92Z" fill="url(#lf)"/></svg>`;
+const V_RINGS = `<svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 7"/><circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="100" r="44" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1 5"/><circle cx="100" cy="4" r="4" fill="currentColor"/></svg>`;
+const V_LOOP = `<svg viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M100 24a76 76 0 0 1 66 38"/><path d="M166 112a76 76 0 0 1-56 63"/><path d="M78 173a76 76 0 0 1-48-85"/></g><g fill="currentColor"><path d="m166 62 2-14-12 6z"/><path d="m110 175-13-6 13-7z"/><path d="m30 88 2 14 10-10z"/></g></svg>`;
+const V_CONTOUR = `<svg viewBox="0 0 600 300" preserveAspectRatio="none"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 220C80 180 140 250 230 210s150-90 250-50 120 20 120 20"/><path d="M0 245C90 205 150 275 240 235s150-90 250-50 110 25 110 25"/><path d="M0 270C100 230 160 300 250 260s150-90 250-50 100 30 100 30"/><path d="M0 195C70 155 130 225 220 185s150-90 250-50 130 15 130 15"/></g></svg>`;
+function fx(v = "a") {
+  const s = (style, cls, html = "") => `<div class="${cls}" style="${style}">${html}</div>`;
+  const sets = {
+    hero: [s("width:560px;height:560px;top:-160px;right:-120px", "blob g1"), s("width:520px;height:520px;bottom:-220px;left:-180px", "blob g2"), s("width:380px;height:380px;top:30%;left:38%", "blob g3"),
+      s("width:220px;height:220px;left:-30px;bottom:12%", "vec", V_LEAF), s("width:420px;height:420px;right:-90px;top:12%", "vec spin", V_RINGS), s("width:120px;height:120px;left:44%;top:9%;opacity:.06", "vec soft", V_LEAF_FILL), s("left:0;right:0;bottom:-40px;height:260px;opacity:.05", "vec", V_CONTOUR)],
+    a: [s("width:460px;height:460px;top:-180px;right:-140px", "blob g1"), s("width:200px;height:200px;left:-60px;top:18%", "vec", V_LEAF), s("width:260px;height:260px;right:6%;bottom:-100px", "vec spin", V_LOOP)],
+    b: [s("width:520px;height:520px;bottom:-240px;left:-160px", "blob g2"), s("width:340px;height:340px;right:-120px;top:-80px", "vec spin", V_RINGS), s("width:150px;height:150px;right:22%;bottom:8%;opacity:.06", "vec soft", V_LEAF_FILL)],
+    c: [s("width:420px;height:420px;top:10%;left:-160px", "blob g1"), s("width:380px;height:380px;bottom:-160px;right:-80px", "blob g3"), s("width:180px;height:180px;right:4%;top:6%", "vec", V_LEAF), s("left:0;right:0;top:-30px;height:220px;opacity:.05", "vec", V_CONTOUR)],
+    dark: [s("width:520px;height:520px;top:-200px;right:-120px", "blob g1"), s("width:460px;height:460px;bottom:-240px;left:-120px", "blob g2"), s("width:300px;height:300px;right:10%;bottom:-120px", "vec spin", V_LOOP), s("width:180px;height:180px;left:3%;top:10%", "vec", V_LEAF)],
+    soon: [s("width:640px;height:640px;top:-200px;right:-160px", "blob g1"), s("width:600px;height:600px;bottom:-260px;left:-200px", "blob g2"), s("width:420px;height:420px;top:40%;left:40%", "blob g3"),
+      s("width:280px;height:280px;left:6%;top:16%", "vec", V_LEAF), s("width:520px;height:520px;right:-120px;bottom:-120px", "vec spin", V_RINGS), s("left:0;right:0;bottom:0;height:300px;opacity:.05", "vec", V_CONTOUR)],
+  };
+  return `<div class="fx" aria-hidden="true">${(sets[v] || sets.a).join("")}</div>`;
+}
+
+/* ---------- shared fragments ---------- */
+const brand = (tag = "a") => `<${tag} class="brand" ${tag === "a" ? 'href="#/" aria-label="GoGreen+ home"' : ""}><span class="brand-badge"><img src="${IMG}brand/emblem-256.png" alt="" width="28" height="26"></span><span class="brand-word">GOGREEN<sup>+</sup></span></${tag}>`;
+const arrow = () => `<span class="btn-ic">${ic("arrowR")}</span>`;
+const tlink = (href, label, extra = "") => `<a class="link" href="${href}" ${extra}><span>${label}</span>${ic("arrowR")}</a>`;
+const QUOTE_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>`;
+
+const vehicleFig = (p) => `<div class="vehicle" style="aspect-ratio:${p.vehicle.ratio}"><img src="${p.img}" alt="${esc(p.title)}">
+  <div class="dim dim-h" aria-hidden="true"><span>${p.vehicle.len}</span></div><div class="dim dim-v" aria-hidden="true"><span>${p.vehicle.ht}</span></div></div>`;
+
+const tile = (p, w) => {
+  const photo = !p.cut;
+  return `<a class="tile ${w}" href="#/services/${p.id}">
+    ${p.line ? `<span class="tag">${p.line}</span>` : ""}
+    <div class="tm ${photo ? "photo" : ""}"><img src="${p.img}" alt="" loading="lazy" decoding="async"></div>
+    <div class="tb"><h3 class="h3">${p.title}</h3><p>${firstSentence(p.description)}</p>${tlink(`#/services/${p.id}`, "View details", 'tabindex="-1"').replace("<a ", "<span ").replace("</a>", "</span>")}</div>
+  </a>`;
+};
+
+const zeroCTA = () => `
+  <div class="zero dark">${fx("dark")}
+    <div style="position:relative">
+      <h2 class="h2">Start Your Zero Waste Journey Today</h2>
+      <p>Partner with India’s most reliable Zero Waste Management Company. Turn everyday waste into a valuable resource.</p>
+    </div>
+    <div class="actions" style="position:relative">
+      <a class="btn btn-light" href="mailto:${CONTACT.email}">Contact Us Now</a>
+      <a class="btn btn-ghost" href="assets/docs/GoGreenPlus-Brochure.pdf" download>${ic("download")}Download Brochure</a>
+    </div>
+  </div>`;
+
+const joinUs = () => `
+  <div class="join">
+    <img src="${IMG}places/tripura-landscape.webp" alt="" loading="lazy">
+    <div class="jb">
+      <h2 class="h2">Join Us</h2>
+      <p>Be part of the change you want to see! We're inviting NGOs, volunteers, and community groups to join us in our efforts to reduce our environmental footprint and promote sustainability. Let's work together to make a difference.</p>
+      <p class="strong">Together, let's shape a cleaner, fairer, and more sustainable India.</p>
+      <div class="actions"><a class="btn btn-light" href="${mailto("We want to partner with you and make the city green and clean")}">Partner With Us</a></div>
+    </div>
+  </div>`;
+
+const soonBlock = (label, compact = false) => `
+  <section class="soon" ${compact ? 'style="min-height:auto;padding-top:24px"' : ""}>${fx("soon")}
+    <div style="position:relative">
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#138a3e"/><stop offset="1" stop-color="#a3d65f"/></linearGradient></defs>
+          <circle cx="100" cy="100" r="92" fill="none" stroke="#138a3e" stroke-opacity=".18" stroke-dasharray="3 8"><animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="40s" repeatCount="indefinite"/></circle>
+          <circle cx="100" cy="100" r="66" fill="#fff" fill-opacity=".8"/>
+          <path d="M66 140C66 104 90 80 132 78c0 42-24 66-66 62Z" fill="url(#sg)"/><path d="M66 140 112 96" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
+      <span class="eyebrow">${label}</span>
+      <h1 class="h1">We’re Developing Something Awesome</h1>
+      <p class="lead">This page is under construction and will be live very soon. Stay tuned!</p>
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="actions"><a class="btn btn-primary" href="#/services">Explore Services${arrow()}</a><a class="btn btn-ghost" href="#/">${ic("arrowL")}Back to home</a></div>
+    </div>
+  </section>`;
+
+/* ==========================================================================
+   Header + footer
+   ========================================================================== */
+const CAREERS = [
+  ["job-search", "Job Search"], ["internships", "Internships"], ["events", "Events"], ["working-here", "Working Here"], ["our-process", "Our Process"],
+];
+function renderHeader() {
+  const m = (p) => `<a class="m-item" href="#/services/${p.id}"><span class="m-thumb ${p.cut ? "" : "photo"}"><img src="${p.img}" alt="" loading="lazy"></span><span><strong>${p.title}</strong>${p.line ? `<small>${p.line}</small>` : ""}</span></a>`;
+  $("#site-header").innerHTML = `
+    <div class="nav-bar">
+      ${brand()}
+      <nav class="nav-track" aria-label="Main">
+        <span class="nav-glide" aria-hidden="true"></span>
+        <a class="nav-a" data-nav="home" href="#/">Home</a>
+        <div class="nav-item" id="m-services">
+          <button class="nav-a" data-nav="services" type="button" aria-expanded="false" aria-controls="p-services">Services ${ic("chevD", "chev")}</button>
+          <div class="menu-panel" id="p-services">
+            <div class="mega">
+              <div><h3>Available solutions</h3><div class="mega-grid">${PRODUCTS.map(m).join("")}</div></div>
+              <div class="mega-side">
+                <h3>In development</h3>
+                ${FUTURE.map((f) => `<a class="d" href="#/services/${f.id}"><img src="${f.img}" alt="" loading="lazy"><span>${f.title}</span></a>`).join("")}
+                <a class="btn btn-light btn-s" href="#/services">Products & services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="nav-a" data-nav="about" href="#/about">About</a>
+        <a class="nav-a" data-nav="responsibility" href="#/responsibility">Responsibility</a>
+        <a class="nav-a" data-nav="impact" href="#/impact">Impact</a>
+        <div class="nav-item" id="m-careers">
+          <button class="nav-a" data-nav="careers" type="button" aria-expanded="false" aria-controls="p-careers">Careers ${ic("chevD", "chev")}</button>
+          <div class="menu-panel" id="p-careers"><div class="drop">${CAREERS.map(([k, l]) => `<a href="#/careers/${k}">${l}${ic("chevR")}</a>`).join("")}</div></div>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <a class="nav-login" href="#/login" data-nav="login">${ic("user")}Log in</a>
+        <a class="btn btn-primary" href="#/book">Schedule a pickup${arrow()}</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">${ic("menu")}</button>
+    </div>`;
+  $("#drawer").innerHTML = `
+    <a class="d-link" href="#/">Home ${ic("chevR")}</a>
+    <a class="d-link" href="#/services">Services ${ic("chevR")}</a>
+    <div class="d-sub">${PRODUCTS.map((p) => `<a href="#/services/${p.id}">${p.title}</a>`).join("")}</div>
+    <a class="d-link" href="#/about">About ${ic("chevR")}</a>
+    <a class="d-link" href="#/responsibility">Responsibility ${ic("chevR")}</a>
+    <a class="d-link" href="#/impact">Impact ${ic("chevR")}</a>
+    <a class="d-link" href="#/careers/job-search">Careers ${ic("chevR")}</a>
+    <div class="d-sub">${CAREERS.map(([k, l]) => `<a href="#/careers/${k}">${l}</a>`).join("")}</div>
+    <div class="actions"><a class="btn btn-primary" href="#/book">Schedule a pickup</a><a class="btn btn-ghost" href="#/login">Log in</a></div>`;
+}
+
+function renderFooter() {
+  $("#site-footer").innerHTML = `${fx("dark")}
+    <div class="wrap" style="position:relative;z-index:1">
+      <div class="pre dark">
+        <div><span class="eyebrow">Start a conversation</span><h2 class="h2">Ready for a cleaner, smarter waste solution?</h2></div>
+        <div class="actions"><a class="btn btn-light" href="#/book">Schedule a pickup${arrow().replace("btn-ic", "btn-ic").replace("rgba", "rgba")}</a><a class="btn btn-ghost" href="mailto:${CONTACT.email}">Talk to our team</a></div>
+      </div>
+      <div class="f-main dark">
+        <div>
+          ${brand()}
+          <p>Electric collection, urban cleaning and waste-to-resource solutions for cleaner, more responsible operations.</p>
+          <div class="f-social">
+            <a href="${CONTACT.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${ic("instagram")}</a>
+            <a href="${CONTACT.facebook}" target="_blank" rel="noopener" aria-label="Facebook">${ic("facebook")}</a>
+            <a href="mailto:${CONTACT.email}" aria-label="Email">${ic("mail")}</a>
+            <a href="${CONTACT.phoneHref}" aria-label="Call">${ic("phone")}</a>
+          </div>
+        </div>
+        <div class="f-col"><h3>Explore</h3><ul>
+          <li><a href="#/services">Products & services</a></li><li><a href="#/about">About Go Green Plus</a></li>
+          <li><a href="#/responsibility">Corporate responsibility</a></li><li><a href="#/impact">Community impact</a></li></ul></div>
+        <div class="f-col"><h3>Services</h3><ul>${PRODUCTS.map((p) => `<li><a href="#/services/${p.id}">${p.title}</a></li>`).join("")}</ul></div>
+        <div class="f-col"><h3>Careers</h3><ul>
+          <li><a href="#/careers/job-search">Current opportunities</a></li><li><a href="#/careers/internships">Internships</a></li>
+          <li><a href="#/careers/working-here">Working here</a></li><li><a href="mailto:${CONTACT.email}">Contact our team</a></li></ul></div>
+      </div>
+      <div class="f-bottom"><span>© 2026 Go Green Plus. All rights reserved.</span><span>Built for cleaner communities.</span></div>
+    </div>`;
+}
+
+/* ==========================================================================
+   Views
+   ========================================================================== */
+const V = {};
+
+V.home = () => {
+  const P = (id) => byId(id);
+  const html = `
+  <section class="hero" data-parallax aria-labelledby="hero-title">
+    ${fx("hero")}
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <span class="eyebrow">Empowering Eco-Stewardship</span>
+        <h1 class="h1" id="hero-title">Reconnect with the Earth. Breathe in Peace. Live Green.</h1>
+        <p class="lead">Electric collection, urban cleaning and waste-to-resource solutions for cleaner, more responsible operations.</p>
+        <div class="actions"><a class="btn btn-primary" href="#/book">Schedule a pickup${arrow()}</a><a class="btn btn-ghost" href="#/services">Explore Services</a></div>
+      </div>
+      <div class="stage"><span class="stage-ring" aria-hidden="true"></span><img class="hero-veh" src="${IMG}products/segrego-cut.webp" alt="Go Green Plus Smart Door-to-Door Collector" fetchpriority="high"><span class="floor" aria-hidden="true"></span></div>
+    </div>
+    <div class="wrap hero-foot">
+      <ul class="points">
+        ${["Electric-first collection and cleaning", "Waste-to-resource systems", "Solutions for urban and rural settings", "Operationally focused implementation"].map((t) => `<li><span class="tick">${ic("check")}</span>${t}</li>`).join("")}
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-block:clamp(48px,5.5vw,80px)">${fx("a")}
+    <div class="wrap"><div class="statement rv"><span class="qmark">${QUOTE_SVG}</span><div>
+      <blockquote>We partner to make the world cleaner, safer and healthier</blockquote>
+      <p>Helping customers succeed while protecting people and the resources vital to life.</p></div></div></div>
+  </section>
+
+  <section class="sec bg-paper">${fx("b")}
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">What we do</span><h2 class="h2">Practical solutions for cleaner places.</h2></div>
+        <p class="lead">From a public street to a campus or residential community, our systems make day-to-day sanitation cleaner, more efficient and easier to manage.</p></div>
+      <div class="flow-cards rail-m">
+        <span class="flow-line" aria-hidden="true"><i></i></span>
+        <a class="fcard rv" href="#/services/door-to-door-garbage-collector"><span class="ic">${ic("truck")}</span><div class="ph"><img src="${IMG}places/street-crew.webp" alt="" loading="lazy" style="object-position:center 30%"></div>
+          <div class="fb"><h3 class="h3">Electric collection</h3><p>Door-to-door collection systems for cleaner, quieter neighbourhood operations.</p><span class="link"><span>Collection & monitoring</span>${ic("arrowR")}</span></div></a>
+        <a class="fcard rv" href="#/services/litter-picker-machine"><span class="ic">${ic("sparkle")}</span><div class="ph"><img src="${IMG}places/market-street.webp" alt="" loading="lazy" style="object-position:center 35%"></div>
+          <div class="fb"><h3 class="h3">Urban cleaning</h3><p>Electric litter-picking equipment for streets, institutions and public spaces.</p><span class="link"><span>Low-noise operation</span>${ic("arrowR")}</span></div></a>
+        <a class="fcard rv" href="#/services/owc"><span class="ic">${ic("recycle")}</span><div class="ph"><img src="${IMG}products/biocng-aerial.webp" alt="" loading="lazy"></div>
+          <div class="fb"><h3 class="h3">Organic waste solutions</h3><p>Composting, biogas and Bio-CNG systems that put organic waste to productive use.</p><span class="link"><span>Source-level processing</span>${ic("arrowR")}</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">${fx("c")}
+    <div class="wrap">
+      <div class="split">
+        <div class="media r43 rv"><img src="${IMG}places/govt-office.webp" alt="Go Green Plus crew at work" loading="lazy" style="object-position:center 28%"></div>
+        <div><span class="eyebrow">Built around the work</span><h2 class="h2">Technology that supports the people who keep spaces clean.</h2>
+          <p class="lead">Our electric machines and collection vehicles are designed for real operating environments: reliable equipment, quieter performance and practical digital monitoring.</p>
+          ${tlink("#/services", "View products & solutions")}</div>
+      </div>
+      <div class="head mt-l" style="margin-top:clamp(56px,6vw,88px)"><h2 class="h2">Manufacturing Excellence</h2><p class="lead">Pioneering sustainable solutions and advanced technologies for a cleaner, greener tomorrow.</p></div>
+      <div class="bento rail-m">
+        ${tile(P("door-to-door-garbage-collector"), "w7")}${tile(P("litter-picker-machine"), "w5")}
+        ${tile(P("bio-gas-plant"), "")}${tile(P("owc"), "")}${tile(P("biocng"), "")}
+        ${tile(P("plastic_collection"), "w12")}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec bg-mist2">${fx("b")}
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Our Services</span><h2 class="h2">Spaces We Serve</h2></div>
+        <p class="lead">Delivering exceptional and sustainable services across a diverse range of environments and industries.</p></div>
+      ${spacesTabs()}
+      <div class="spaces-foot"><span>Covering <b>${SPACES.reduce((a, s) => a + s.items.length, 0)}+</b> space types across industries</span></div>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track">${[...SPACES.flatMap((s) => s.items), ...SPACES.flatMap((s) => s.items)].map((x) => `<span>${x}</span>`).join("")}</div></div>
+    </div>
+  </section>
+
+  <section class="sec bg-paper">${fx("a")}
+    <div class="wrap">
+      <div class="head solo"><div><span class="eyebrow">How we work</span><h2 class="h2">A clear route from requirement to cleaner outcomes.</h2></div></div>
+      <ol class="steps">
+        ${[["Understand the site", "We assess the collection, cleaning or processing requirement."], ["Plan the solution", "Our team recommends equipment and an operational approach."], ["Put it to work", "A practical, electric-first solution is deployed for the space."], ["Keep improving", "Monitoring and responsible handling support reliable operations."]]
+          .map(([t, d], i) => `<li class="step rv"><span class="n">${two(i + 1)}</span><h3 class="h3">${t}</h3><p>${d}</p></li>`).join("")}
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec">${fx("c")}
+    <div class="wrap">
+      <div class="split flip">
+        <div class="media r43 rv"><img src="${IMG}products/biogas-plant-aerial.webp" alt="Go Green Plus biogas plant" loading="lazy"></div>
+        <div><span class="eyebrow">Responsible by design</span><h2 class="h2">Waste should be handled as a resource, not an afterthought.</h2>
+          <p class="lead">Go Green Plus focuses on source-level collection, segregation and systems for organic waste processing—helping sites move toward more responsible, circular operations.</p>
+          <div class="feat2"><div>${ic("leaf")}<strong>Organic waste processing</strong><span>Biogas, composting and Bio-CNG solutions.</span></div><div>${ic("pin")}<strong>Built for local operations</strong><span>Equipment engineered for Indian environments.</span></div></div></div>
+      </div>
+      <div class="band mt-l rv" style="margin-top:clamp(40px,5vw,72px)">${fx("dark")}
+        <div class="bm"><img src="${IMG}places/public-toilet.webp" alt="Go Green Plus team at a public facility" loading="lazy" style="object-position:center 35%"></div>
+        <div class="bb dark"><span class="eyebrow">Go Green Plus</span><h2 class="h2" style="margin-top:16px">Environmental services with an operational mindset.</h2>
+          <p class="lead">We combine electric mobility, sanitation equipment and waste-to-resource systems to help communities, institutions and public places manage their environmental responsibilities with care.</p>
+          ${tlink("#/about", "Learn about our company")}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">${joinUs()}</div>
+  </section>`;
+  return { title: "GoGreen+ | Reconnect with the Earth. Breathe in Peace. Live Green.", nav: "home", html, after: [initTabs] };
+};
+
+function spacesTabs() {
+  return `<div class="spaces" data-tabs>
+    <div class="tabs" role="tablist" aria-label="Spaces we serve">
+      ${SPACES.map((s, i) => `<button class="tab" role="tab" id="tab-${i}" aria-controls="panel-${i}" aria-selected="${i === 0}" tabindex="${i ? -1 : 0}"><span class="tic">${ic(s.icon)}</span><strong>${s.title}</strong><span class="cnt">${s.items.length}</span></button>`).join("")}
+    </div>
+    <div>${SPACES.map((s, i) => `
+      <div class="panel" role="tabpanel" id="panel-${i}" aria-labelledby="tab-${i}" ${i ? "hidden" : ""}>
+        <div class="pm ${s.cut ? "cut" : ""}"><img src="${s.img}" alt="" loading="lazy" style="object-position:${s.pos || "center"}"></div>
+        <div class="pb"><h3 class="h3">${s.title}</h3><ul>${s.items.map((x) => `<li>${ic("check")}${x}</li>`).join("")}</ul></div>
+      </div>`).join("")}</div>
+  </div>`;
+}
+
+/* ---------------- SERVICES ---------------- */
+V.services = () => {
+  const row = (p, i) => `
+    <article class="prow ${i % 2 ? "flip" : ""} rv" id="p-${p.id}">
+      <a class="pmedia ${p.cut ? "" : "photo"}" href="#/services/${p.id}" aria-label="${esc(p.title)}"><img src="${p.img}" alt="" loading="lazy" decoding="async"></a>
+      <div class="ptext">
+        <div class="meta"><span class="n">${two(i + 1)}</span>${p.line ? `<span class="line-tag">${p.line}</span>` : ""}</div>
+        <h2 class="h2">${p.title}</h2>
+        <p class="body">${p.description}</p>
+        <div class="actions"><a class="btn btn-primary btn-s" href="#/services/${p.id}">View details${arrow()}</a></div>
+      </div>
+    </article>`;
+  const html = `
+  <section class="page-hero fit" data-parallax>${fx("hero")}
+    <div class="wrap ph-grid">
+      <div>
+        <span class="eyebrow">Products & services</span>
+        <h1 class="h1" style="margin-top:18px">Equipment and systems for better everyday waste operations.</h1>
+        <p class="lead">From collection and cleaning to organic waste processing, Go Green Plus develops practical solutions for institutions, municipalities, communities and commercial sites.</p>
+        <div class="actions"><a class="btn btn-primary" href="mailto:${CONTACT.email}">Request a service${arrow()}</a><a class="btn btn-ghost" href="#/book">Schedule a pickup</a></div>
+      </div>
+      <div class="trio" aria-hidden="true">
+        <img class="t3" src="${IMG}products/owc-cut.webp" alt="">
+        <img class="t1" src="${IMG}products/segrego-cut.webp" alt="">
+        <img class="t2" src="${IMG}products/vayu-cut.webp" alt="">
+      </div>
+    </div>
+  </section>
+  <section class="sec" id="available" style="padding-top:clamp(40px,4vw,64px)">${fx("a")}
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Available solutions</span><h2 class="h2">Designed for the work on the ground.</h2></div>
+        <div class="chips">${PRODUCTS.map((p, i) => `<a class="chip" href="#/services" data-jump="p-${p.id}"><span class="n">${two(i + 1)}</span>${p.title}</a>`).join("")}</div></div>
+      ${PRODUCTS.map(row).join("")}
+    </div>
+  </section>
+  <section class="sec bg-paper" id="dev">${fx("b")}
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">In development</span><h2 class="h2">Future-focused systems.</h2></div>
+        <p class="lead">We are exploring technologies that improve resource recovery, cleaner infrastructure and sustainable operations.</p></div>
+      <div class="dev-grid">${FUTURE.map((f) => `<a class="dcard rv" href="#/services/${f.id}"><div class="dm"><img src="${f.img}" alt="" loading="lazy"></div><div class="db"><span class="status">In development</span><h3 class="h3">${f.title}</h3><p>${f.description}</p></div></a>`).join("")}</div>
+      <div class="need" style="margin-top:clamp(36px,4vw,56px)">${fx("a")}<span class="ic">${ic("leaf")}</span><div><h2 class="h2" style="font-size:clamp(24px,2.2vw,32px)">Need a solution for your site?</h2><p>Speak with our team about the right collection, cleaning or processing approach for your operational needs.</p></div>
+        <a class="btn btn-primary" href="mailto:${CONTACT.email}">Request a service${arrow()}</a></div>
+    </div>
+  </section>`;
+  return { title: "Products & Services | GoGreen+", nav: "services", html, after: [initJumps] };
+};
+
+/* ---------------- PRODUCT DETAIL ---------------- */
+V.product = (id) => {
+  const p = byId(id);
+  if (!p) return V.notFound("Product Not Found", "The product you're looking for doesn't exist.");
+  const others = PRODUCTS.filter((x) => x.id !== p.id);
+  const media = p.vehicle ? `<div class="pd-media" style="padding:8% 6% 12% 12%">${vehicleFig(p)}</div>`
+    : p.cut ? `<div class="pd-media"><img class="contain" src="${p.img}" alt="${esc(p.title)}"></div>`
+    : `<div class="pd-media photo"><img src="${p.img}" alt="${esc(p.title)}"></div>`;
+  const html = `
+  <section class="page-hero fit" data-parallax>${fx("hero")}
+    <div class="wrap">
+      <div class="pd">
+        <div>
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="#/services">${ic("arrowL")}Back to Products</a></nav>
+          <div class="badges"><span class="badge">${p.dev ? "Coming Soon" : "Premium Solutions"}</span>${p.line ? `<span class="line-tag">${p.line}</span>` : ""}</div>
+          <h1 class="h1">${p.title}</h1>
+          <p class="body">${p.description}</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="${mailto("Enquiry: " + p.title)}">Enquire Now${arrow()}</a>
+            <a class="btn btn-ghost" href="${CONTACT.phoneHref}">${ic("phone")}Call Us</a>
+          </div>
+          ${p.dev ? "" : `<p class="small">${tlink("assets/docs/GoGreenPlus-Brochure.pdf", "Download Brochure", "download")}</p>`}
+        </div>
+        ${p.dev ? `<div class="pd-media photo"><img src="${p.img}" alt="${esc(p.title)}"></div>` : media}
+      </div>
+    </div>
+  </section>
+
+  ${p.specifications ? `
+  <section class="sec" style="padding-top:clamp(40px,4vw,64px)">${fx("a")}
+    <div class="wrap">
+      <div class="head solo"><div><h2 class="h2">Specifications</h2></div></div>
+      <ol class="specs">${p.specifications.map((s, i) => `<li class="spec-item"><span class="n">${two(i + 1)}</span><span>${s}</span></li>`).join("")}</ol>
+      ${p.table ? (() => { const h = Math.ceil(p.table.length / 2); const t = (rows) => `<table><thead><tr><th scope="col">Parameter</th><th scope="col">Performance</th><th scope="col">Units</th></tr></thead><tbody>${rows.map(([a, b, c]) => `<tr><th scope="row">${a}</th><td>${b}</td><td class="u">${c}</td></tr>`).join("")}</tbody></table>`;
+        return `<div class="ttable split-t"><div class="tcap"><strong>${p.line}</strong><span>${p.title}</span></div><div class="tcols">${t(p.table.slice(0, h))}${t(p.table.slice(h))}</div></div>`; })() : ""}
+    </div>
+  </section>` : ""}
+
+  ${p.additionalImage ? `
+  <section class="sec bg-paper">${fx("b")}
+    <div class="wrap">
+      <div class="head ${p.howSubtitle ? "" : "solo"}"><div><h2 class="h2">How It Works</h2></div>${p.howSubtitle ? `<p class="lead">From organic waste to <strong style="color:var(--leaf)">Nutrient Rich Compost</strong> in simple steps</p>` : ""}</div>
+      <figure class="how rv"><img src="${p.additionalImage}" alt="${esc(p.title)} — process" loading="lazy"></figure>
+    </div>
+  </section>` : ""}
+
+  <section class="sec">
+    <div class="wrap">
+      ${zeroCTA()}
+      <div class="head mt-l" style="margin-top:clamp(48px,5vw,72px)"><div><span class="eyebrow">${p.dev ? "Future Innovations" : "Available solutions"}</span><h2 class="h2">${p.dev ? "Pioneering tomorrow's solutions for a sustainable world" : "Designed for the work on the ground."}</h2></div></div>
+      ${p.dev
+        ? `<div class="dev-grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">${FUTURE.filter((f) => f.id !== p.id).map((f) => `<a class="dcard" href="#/services/${f.id}"><div class="dm"><img src="${f.img}" alt="" loading="lazy"></div><div class="db"><span class="status">In development</span><h3 class="h3">${f.title}</h3><p>${f.description}</p></div></a>`).join("")}</div>`
+        : `<div class="mini-grid">${others.map((o) => `<a class="mini" href="#/services/${o.id}"><span class="mm ${o.cut ? "" : "photo"}"><img src="${o.img}" alt="" loading="lazy"></span><strong>${o.title}</strong></a>`).join("")}</div>`}
+    </div>
+  </section>`;
+  return { title: `${p.title} | GoGreen+`, nav: "services", html };
+};
+
+/* ---------------- RESPONSIBILITY ---------------- */
+V.responsibility = () => {
+  const pillar = (title, icon, img, items, opts = {}) => `
+    <div class="pillar ${opts.dark ? "dark-p" : ""} rv">
+      <div class="pl"><span class="ic">${ic(icon)}</span><h2 class="h2" style="font-size:clamp(24px,2.2vw,32px)">${title}</h2>
+        <figure class="${opts.contain ? "contain" : ""}"><img src="${img}" alt="" loading="lazy" style="object-position:${opts.pos || "center"}"></figure></div>
+      <ul>${items.map(([l, d]) => `<li><span class="tk">${ic("check")}</span><div><strong>${l}:</strong><span>${d}</span></div></li>`).join("")}</ul>
+    </div>`;
+  const html = `
+  <section class="page-hero fit" data-parallax>${fx("hero")}
+    <div class="wrap ph-grid">
+      <div>
+        <span class="eyebrow">Responsibility</span>
+        <h1 class="h1" style="margin-top:18px">A Cleaner Tomorrow, A Shared Responsibility</h1>
+        <p class="lead">At Go Green+, corporate responsibility isn't a side initiative — it's the way we do business. We're building a future where environmental care, community upliftment, and ethical practices go hand in hand.</p>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div class="c1"><img src="${IMG}places/tripura-landscape.webp" alt=""></div>
+        <div class="c2"><img src="${IMG}places/street-crew.webp" alt="" style="object-position:center 30%"></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:clamp(40px,4vw,64px)">${fx("a")}
+    <div class="wrap">
+      ${pillar("Caring for the Environment", "sparkle", IMG + "products/biocng-aerial.webp", [
+        ["Environmental Stewardship", "From reducing waste to conserving natural resources, we take active steps to protect the planet."],
+        ["Sustainable Waste Management", "We design smart waste systems that focus on reducing landfill dependency through recycling, sorting, and responsible disposal."],
+        ["Greener Public Spaces", "We lead tree-planting initiatives, support biodiversity, and help cities reclaim neglected spaces through eco-friendly beautification."],
+        ["Eco-Innovation at Work", "Our products and processes evolve to meet high environmental standards — because we believe innovation must serve the planet."],
+      ])}
+      ${pillar("Strengthening Communities", "users", IMG + "places/public-toilet.webp", [
+        ["Education & Awareness", "Through workshops, school programs, and NGO partnerships, we raise awareness about hygiene, waste segregation, and sustainability."],
+        ["Local Development", "We help create and maintain essential sanitation infrastructure, especially in underserved areas."],
+        ["Jobs with Dignity", "We provide not just employment but also training and growth opportunities in green industries."],
+      ], { dark: true, pos: "center 30%" })}
+      ${pillar("Acting with Integrity", "shield", IMG + "brand/startup-certificate.webp", [
+        ["Compliance & Transparency", "We follow all local regulations and maintain clear communication with our stakeholders."],
+        ["Accountability in Action", "We regularly assess our programs and publicly share our progress."],
+        ["Measuring What Matters", "We track and report results across environmental, social, and economic metrics."],
+      ], { contain: true })}
+    </div>
+  </section>
+  <section class="sec bg-dark dark">${fx("dark")}
+    <div class="wrap">
+      <div class="head solo"><div><span class="eyebrow">Responsibility</span><h2 class="h2">Our Impact</h2></div></div>
+      <div class="impact3">
+        <div class="rv"><span class="ic">${ic("globe")}</span><h3 class="h3">Environmental Impact</h3><p>Reduced waste, increased recycling, cleaner spaces.</p></div>
+        <div class="rv"><span class="ic">${ic("users")}</span><h3 class="h3">Social Impact</h3><p>Community reach, engagement levels, and empowerment metrics.</p></div>
+        <div class="rv"><span class="ic">${ic("rupee")}</span><h3 class="h3">Economic Impact</h3><p>Local jobs created, skills developed, and long-term financial inclusion.</p></div>
+      </div>
+    </div>
+  </section>`;
+  return { title: "Corporate Responsibility | GoGreen+", nav: "responsibility", html };
+};
+
+/* ---------------- COMING SOON pages ---------------- */
+V.soon = (label, nav) => ({ title: `${label} | GoGreen+`, nav, html: soonBlock(label), noAnimHero: true });
+
+/* ---------------- ABOUT ---------------- */
+V.about = () => {
+  const card = (p) => `<a class="person rv" href="#/about/${p.id}"><span class="pp"><img src="${p.img}" alt="${esc(p.name)}" loading="lazy" style="object-position:${p.pos || "center"}"></span><span class="pt"><strong>${p.name}</strong><span>${p.role || "Advisor"}</span>${`<span class="link"><span>View profile</span>${ic("arrowR")}</span>`}</span></a>`;
+  const group = (label, people) => `<div><div class="group-label">${label}</div><div class="team-row" style="--c:${people.length}">${people.map(card).join("")}</div></div>`;
+  const html = `
+  <section class="page-hero fit" data-parallax>${fx("hero")}
+    <div class="wrap ph-grid">
+      <div>
+        <span class="eyebrow">About Go Green Plus</span>
+        <h1 class="h1" style="margin-top:18px">Practical action for cleaner communities.</h1>
+        <p class="lead">Go Green Plus brings together sanitation equipment, electric mobility and waste-to-resource solutions for the places people live, work and share.</p>
+        <div class="actions"><a class="btn btn-primary" href="#/about" data-jump="people">Our people${arrow()}</a><a class="btn btn-ghost" href="#/services">Explore Services</a></div>
+      </div>
+      <figure class="ph-media"><img src="${IMG}places/tripura-landscape.webp" alt="Misty hills and fields in Tripura"></figure>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:clamp(40px,4vw,64px)">${fx("a")}
+    <div class="wrap split" style="align-items:start">
+      <div><span class="eyebrow">Our mission</span><h2 class="h2">Better sanitation should feel possible, practical and local.</h2></div>
+      <div>
+        <p class="lead">Based in Agartala, Tripura, Go Green Plus is working to strengthen India’s sanitation and waste-management ecosystem through locally relevant technology and operational solutions.</p>
+        <p class="lead" style="margin-top:14px">We focus on equipment and systems that support day-to-day cleanliness while helping communities and institutions handle waste more responsibly.</p>
+        <ul class="checks">${["Electric-first collection and cleaning", "Waste-to-resource systems", "Solutions for urban and rural settings", "Operationally focused implementation"].map((t) => `<li><span class="tk">${ic("check")}</span>${t}</li>`).join("")}</ul>
+      </div>
+    </div>
+  </section>
+  <section class="sec bg-mist2">${fx("b")}
+    <div class="wrap recog">
+      <div>
+        <span class="eyebrow">Recognition</span>
+        <h2 class="h2">Recognized for innovation in sustainable waste management.</h2>
+        <p class="lead mt-m">Go Green Plus has received Government of India recognition for its work on environmental sustainability and waste-management innovation.</p>
+        <div class="card"><span class="ic">${ic("award")}</span><div><strong>Recognized innovative startup</strong><span>Operating with a focus on scalable, policy-aligned and implementation-ready solutions.</span></div></div>
+        <div class="actions mt-m"><a class="btn btn-primary" href="assets/docs/GoGreenPlus-Startup-Recognition-Certificate.jpg" download>Download certificate ${ic("download")}</a></div>
+      </div>
+      <figure class="cert rv"><img src="${IMG}brand/startup-certificate.webp" alt="Recognition Certificate Under Tripura Start-Up Policy" loading="lazy"></figure>
+    </div>
+  </section>
+  <section class="sec" style="padding-bottom:0">
+    <div class="wrap"><figure class="quote rv">${fx("dark")}<div style="position:relative">
+      <blockquote>“GoGreen+ isn’t just about cleaning — it’s about restoring dignity to public spaces and creating a better tomorrow for all.”</blockquote>
+      <figcaption>— Community Partner, Tripura</figcaption></div></figure></div>
+  </section>
+  <section class="sec" id="people">${fx("c")}
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Our people</span><h2 class="h2">The team behind Go Green Plus.</h2></div><p class="lead">Experts, engineers and operational leaders working on cleaner, more sustainable places.</p></div>
+      <div class="group-label">Leadership</div>
+      <div class="leaders">${TEAM.executives.map((p) => `<a class="leader rv" href="#/about/${p.id}"><span class="pp"><img src="${p.img}" alt="${esc(p.name)}" loading="lazy" style="object-position:${p.pos}"></span><span class="pt"><strong>${p.name}</strong><span>${p.role}</span><span class="bx">${firstSentence(p.about)}</span><span class="link"><span>View profile</span>${ic("arrowR")}</span></span></a>`).join("")}</div>
+      <div class="groups-row mt-l">${group("Technology", TEAM.technology)}${group("Electrical", TEAM.electrical)}${group("Administration", TEAM.administration)}</div>
+      <div class="mt-l"><div class="group-label">Advisors</div><div class="team-row">${TEAM.advisors.map(card).join("")}</div></div>
+    </div>
+  </section>`;
+  return { title: "About | GoGreen+", nav: "about", html, after: [initJumps] };
+};
+
+V.profile = (id) => {
+  const p = ALL_PEOPLE.find((x) => x.id === id);
+  if (!p) return V.notFound("Profile Not Found", "The profile you're looking for doesn't exist.");
+  const isAdv = p.kind === "Advisor";
+  const role = p.role || "";
+  const others = ALL_PEOPLE.filter((x) => x.id !== p.id).slice(0, 4);
+  const html = `
+  <section class="page-hero" style="padding-bottom:var(--section)">${fx("hero")}
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#/about" data-jump="people">${ic("arrowL")}Back to About</a></nav>
+      <div class="profile">
+        <aside>
+          <div class="pp"><img src="${p.img}" alt="${esc(p.name)}" style="object-position:${p.pos || "center"}"></div>
+          <dl>
+            <div><dt>Country</dt><dd>India</dd></div>
+            ${role ? `<div><dt>Role</dt><dd>${role}</dd></div>` : ""}
+            ${p.email ? `<div><dt>Email</dt><dd><a href="mailto:${p.email}">${p.email}</a></dd></div>` : ""}
+            ${p.linkedIn ? `<div><dt>LinkedIn</dt><dd><a href="${p.linkedIn}" target="_blank" rel="noopener">View profile</a></dd></div>` : ""}
+            ${p.scholar ? `<div><dt>Google Scholar</dt><dd><a href="${p.scholar}" target="_blank" rel="noopener">View profile</a></dd></div>` : ""}
+          </dl>
+        </aside>
+        <article>
+          <div class="chips"><span class="badge">${p.kind}</span>${role ? `<span class="chip" style="padding:6px 12px;font-size:13px">${role}</span>` : ""}</div>
+          <h1 class="h1">${p.name}</h1>
+          <div class="where"><span>${ic("pin")}India</span>${p.email ? `<a href="mailto:${p.email}">${ic("mail")}${p.email}</a>` : ""}${p.linkedIn ? `<a href="${p.linkedIn}" target="_blank" rel="noopener">${ic("linkedin")}LinkedIn</a>` : ""}</div>
+          <div class="bio"><h2 class="h3" style="margin-bottom:14px">About ${p.name}</h2>${p.about ? splitBio(p.about).map((x) => `<p>${x}</p>`).join("") : `<p>Bio coming soon.</p>`}</div>
+          ${isAdv ? `<span class="trusted">${ic("award")}Trusted Advisor & Industry Expert</span>` : ""}
+        </article>
+      </div>
+      <div class="head mt-l" style="margin-top:clamp(48px,5vw,72px);margin-bottom:20px"><div><span class="eyebrow">Our people</span><h2 class="h2">The team behind Go Green Plus.</h2></div></div>
+      <div class="team-row">${others.map((o) => `<a class="person" href="#/about/${o.id}"><span class="pp"><img src="${o.img}" alt="${esc(o.name)}" loading="lazy" style="object-position:${o.pos || "center"}"></span><span class="pt"><strong>${o.name}</strong><span>${o.role || "Advisor"}</span><span class="link"><span>View profile</span>${ic("arrowR")}</span></span></a>`).join("")}</div>
+    </div>
+  </section>`;
+  return { title: `${p.name} | GoGreen+`, nav: "about", html, after: [initJumps] };
+};
+
+/* ---------------- CAREERS ---------------- */
+V.careers = (tab = "job-search") => {
+  const T = {
+    "job-search": { h: "Job Search", s: "Find your next career opportunity", ph: "Search jobs, companies, or keywords...", data: JOBS, types: ["Full-time", "Part-time", "Contract"], noun: "job", empty: ["No jobs found", "Try adjusting your search criteria or check back later for new opportunities."] },
+    internships: { h: "Internship Search", s: "Find your next learning opportunity", ph: "Search internships, companies, or keywords...", data: INTERNSHIPS, types: ["Full-time", "Part-time", "Internship"], noun: "internship", empty: ["No internships found", "Try adjusting your search criteria or check back later for new opportunities."] },
+    events: { h: "Upcoming Events", s: "Stay updated with GoGreen Energy’s latest events and initiatives", ph: "Search events by name, location, or description...", data: EVENTS, noun: "event", empty: ["No events found", "Try searching with a different keyword or check back later."] },
+    "working-here": { h: "Working Here", soon: true },
+    "our-process": { h: "Our Process", soon: true },
+  };
+  const t = T[tab] || T["job-search"];
+  const apply = (j, kind) => mailto(`Application for ${j.title} (${kind} ID: ${j.id})`, `Dear Hiring Team,\n\nI am writing to express my interest in the ${j.title} position (${kind} ID: ${j.id}).\n\nContact Details:\nName: [Your Name]\nEmail: [Your Email]\nPhone: [Your Phone]\n\nPlease find my resume attached to this email.\n\nThank you for considering my application.\n\nBest regards,\n[Your Name]`);
+  const card = (j) => tab === "events"
+    ? `<article class="job event" data-item data-text="${esc((j.title + " " + j.company + " " + j.description + " " + j.location).toLowerCase())}">
+        <div class="ev-date"><b>${j.d}</b><span>${j.m}</span></div>
+        <div><h3 class="h3">${j.title}</h3><div class="co">${j.company}</div>
+          <div class="meta"><span>${ic("calendar")}${j.date}</span><span>${ic("clock")}${j.time}</span><span>${ic("pin")}${j.location}</span></div>
+          <p class="d">${j.description}</p></div></article>`
+    : `<article class="job" data-item data-type="${j.type.toLowerCase()}" data-text="${esc((j.title + " " + j.company + " " + j.description).toLowerCase())}">
+        <div><h3 class="h3">${j.title}</h3><div class="co">${j.company}</div>
+          <div class="meta"><span>${ic("pin")}${j.location}</span><span>${ic("briefcase")}${j.type}</span><span>${ic("clock")}${j.postedDate}</span><span class="pay">${j.salary}</span></div>
+          <p class="d">${j.description}</p></div>
+        <div class="ja"><a class="btn btn-primary btn-s" href="${apply(j, tab === "internships" ? "Internship" : "Job")}">Apply Now</a></div></article>`;
+  const html = `
+  <section class="page-hero" style="padding-bottom:clamp(28px,3vw,40px)">${fx("hero")}
+    <div class="wrap">
+      <span class="eyebrow">Careers</span>
+      <h1 class="h1" style="margin-top:18px">${t.h}</h1>
+      ${t.s ? `<p class="lead" style="margin-top:10px">${t.s}</p>` : ""}
+      <nav class="ctabs" aria-label="Careers">${CAREERS.map(([k, l]) => `<a href="#/careers/${k}" ${k === tab ? 'aria-current="page"' : ""}>${l}</a>`).join("")}</nav>
+    </div>
+  </section>
+  ${t.soon ? soonBlock(t.h, true) : `
+  <section class="sec" style="padding-top:8px">${fx("a")}
+    <div class="wrap">
+      <div class="search ${t.types ? "" : "one"}" role="search">
+        <label class="field"><span class="visually-hidden">Search</span>${ic("search")}<input class="input" id="q" type="search" placeholder="${t.ph}"></label>
+        ${t.types ? `<label class="field"><span class="visually-hidden">Type</span>${ic("filter")}<select class="select" id="type"><option value="all">All Types</option>${t.types.map((x) => `<option value="${x.toLowerCase()}">${x}</option>`).join("")}</select></label>` : ""}
+      </div>
+      ${tab === "events" ? "" : `<p class="count" id="count" aria-live="polite">Showing ${t.data.length} ${t.noun}${t.data.length !== 1 ? "s" : ""}</p>`}
+      <div class="list ${tab === "events" ? "" : "two"}" id="list" ${tab === "events" ? 'style="margin-top:18px"' : ""}>${t.data.map(card).join("")}</div>
+      <div class="empty" id="empty" hidden>${ic(tab === "events" ? "calendar" : "briefcase")}<h3 class="h3">${t.empty[0]}</h3><p>${t.empty[1]}</p></div>
+    </div>
+  </section>`}`;
+  return { title: `${t.h} | Careers | GoGreen+`, nav: "careers", html, after: [(r) => initFilter(r, t.noun)] };
+};
+
+/* ---------------- BOOKING ---------------- */
+V.book = () => {
+  const today = new Date().toISOString().split("T")[0];
+  const html = `
+  <section class="page-hero" style="padding-bottom:clamp(24px,3vw,36px)">${fx("hero")}
+    <div class="wrap"><span class="eyebrow">Book Now</span><h1 class="h1" style="margin-top:18px">Schedule a pickup</h1></div>
+  </section>
+  <section class="sec" style="padding-top:8px">${fx("a")}
+    <div class="wrap book">
+      <form class="form-card" id="book-form" novalidate>
+        <div class="fgrid">
+          <div class="fl"><label for="b-phone">Phone *</label><input class="input" id="b-phone" name="Phone" type="tel" inputmode="tel" required pattern="[0-9]{10,15}"><p class="err">Invalid number</p></div>
+          <div class="fl"><label for="b-date">Date *</label><input class="input" id="b-date" name="Date" type="date" min="${today}" required><p class="err">Required</p></div>
+          <div class="fl full"><label for="b-addr">Address *</label><textarea class="textarea" id="b-addr" name="Address" rows="2" required minlength="5"></textarea><p class="err">Required</p></div>
+          <div class="fl"><label for="b-slot">Time slot *</label><select class="select" id="b-slot" name="Time slot" required><option value="">Select</option><option>08:00-10:00</option><option>10:00-12:00</option><option>12:00-14:00</option><option>14:00-16:00</option><option>16:00-18:00</option></select><p class="err">Required</p></div>
+          <div class="fl"><label for="b-ins">Instructions</label><input class="input" id="b-ins" name="Instructions" placeholder="Gate code, etc."></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Create booking</button>
+        <p class="status-msg mt-s" role="status"></p>
+      </form>
+      <aside class="side-card dark">${fx("dark")}
+        <div style="position:relative;display:grid;gap:10px">
+          <a class="cline" href="${CONTACT.phoneHref}">${ic("phone")}${CONTACT.phone}</a>
+          <a class="cline" href="mailto:${CONTACT.email}">${ic("mail")}${CONTACT.email}</a>
+          <a class="cline" href="#/login">${ic("user")}Log in</a>
+        </div>
+        <img class="veh" src="${IMG}products/segrego-cut.webp" alt="" style="position:relative">
+      </aside>
+    </div>
+  </section>`;
+  return { title: "Schedule a pickup | GoGreen+", nav: "", html, after: [initBook] };
+};
+
+/* ---------------- LOGIN ---------------- */
+V.login = () => ({
+  title: "Log in | GoGreen+", nav: "login", noFooter: true,
+  html: `
+  <section class="page-hero" style="padding-bottom:24px">
+    <div class="wrap login">
+      <div class="login-art dark">${fx("dark")}
+        <div style="position:relative"><a class="link back" href="#/">${ic("arrowL")}<span>Back to home</span></a></div>
+        <img class="veh" src="${IMG}products/segrego-cut.webp" alt="" style="position:relative">
+        <div style="position:relative">
+          <span class="eyebrow">Go Green Plus portal</span>
+          <h2 class="h2" style="margin-top:16px">A cleaner operation starts with a connected team.</h2>
+          <p class="lead" style="margin-top:12px">Sign in to manage your service activity and stay connected with Go Green Plus.</p>
+          <p class="tag" style="margin-top:22px">Environmental operations, made practical.</p>
+        </div>
+      </div>
+      <div class="login-form">
+        <form id="login-form" novalidate>
+          ${brand("div")}
+          <div><span class="eyebrow">Account access</span><h1 class="h2" style="margin-top:14px">Welcome back.</h1><p class="body" style="margin-top:6px">Enter your account details to continue.</p></div>
+          <div class="fl"><label for="lg-email">Email Address</label><div class="field">${ic("mail")}<input class="input" id="lg-email" type="email" autocomplete="email" placeholder="you@example.com" required></div><p class="err">Enter a valid email address</p></div>
+          <div class="fl"><label for="lg-pw">Password</label><div class="field pw">${ic("lock")}<input class="input" id="lg-pw" type="password" autocomplete="current-password" placeholder="••••••••" required><button type="button" aria-label="Show password" data-pw>${ic("eye")}</button></div><p class="err">Password is required</p></div>
+          <p style="text-align:right;margin-top:-6px"><a class="link" href="${mailto("Forgot Password")}"><span>Forgot Password?</span></a></p>
+          <button class="btn btn-primary" type="submit" style="width:100%">Login</button>
+          <p class="status-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>`,
+  after: [initLogin],
+});
+
+V.notFound = (h = "Page Not Found", s = "The page you're looking for doesn't exist.") => ({
+  title: `${h} | GoGreen+`, nav: "",
+  html: `<section class="soon">${fx("soon")}<div style="position:relative"><span class="eyebrow">404</span><h1 class="h1">${h}</h1><p class="lead">${s}</p><div class="actions"><a class="btn btn-primary" href="#/">Go Home${arrow()}</a></div></div></section>`,
+});
+
+/* ==========================================================================
+   Behaviours
+   ========================================================================== */
+let cleanups = [];
+function initTabs(root) {
+  $$("[data-tabs]", root).forEach((w) => {
+    const tabs = $$('[role="tab"]', w), panels = $$('[role="tabpanel"]', w);
+    const sel = (i, f) => { tabs.forEach((t, k) => { t.setAttribute("aria-selected", k === i); t.tabIndex = k === i ? 0 : -1; }); panels.forEach((p, k) => { p.hidden = k !== i; if (k === i) { p.classList.remove("is-in"); void p.offsetWidth; p.classList.add("is-in"); } }); if (f) tabs[i].focus(); };
+    tabs.forEach((t, i) => { t.addEventListener("click", () => sel(i)); t.addEventListener("keydown", (e) => { const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key]; if (d) { e.preventDefault(); sel((i + d + tabs.length) % tabs.length, true); } }); });
+  });
+}
+function jumpTo(id, smooth = true) { const el = document.getElementById(id); if (!el) return; const y = el.getBoundingClientRect().top + scrollY - 100; scrollTo({ top: y, behavior: smooth && !REDUCED ? "smooth" : "auto" }); }
+function initJumps(root) { $$("[data-jump]", root).forEach((a) => a.addEventListener("click", (e) => { if (a.getAttribute("href") === location.hash || a.tagName === "BUTTON") { e.preventDefault(); jumpTo(a.dataset.jump); } else { try { sessionStorage.setItem("gg-jump", a.dataset.jump); } catch (_) { window.__j = a.dataset.jump; } } })); }
+function initFilter(root, noun) {
+  const q = $("#q", root); if (!q) return;
+  const type = $("#type", root), count = $("#count", root), empty = $("#empty", root);
+  const run = () => { const term = q.value.trim().toLowerCase(), t = type ? type.value : "all"; let n = 0;
+    $$("[data-item]", root).forEach((j) => { const ok = (!term || j.dataset.text.includes(term)) && (t === "all" || j.dataset.type === t); j.hidden = !ok; if (ok) n++; });
+    if (count) count.textContent = `Showing ${n} ${noun}${n !== 1 ? "s" : ""}${term ? ` for "${q.value.trim()}"` : ""}`; empty.hidden = n !== 0; };
+  q.addEventListener("input", run); type && type.addEventListener("change", run);
+}
+function validate(form) { let ok = true, first = null; $$("[required]", form).forEach((f) => { const fl = f.closest(".fl"); const v = f.checkValidity() && f.value.trim() !== ""; fl && fl.classList.toggle("invalid", !v); f.setAttribute("aria-invalid", !v); if (!v && !first) first = f; ok = ok && v; }); first && first.focus(); return ok; }
+function initBook(root) {
+  const f = $("#book-form", root);
+  f.addEventListener("submit", (e) => { e.preventDefault(); if (!validate(f)) return;
+    const d = Object.fromEntries(new FormData(f).entries()); const btn = $('button[type="submit"]', f); btn.textContent = "Booking...";
+    const body = Object.entries(d).filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join("\n");
+    location.href = mailto("Schedule a pickup", body);
+    setTimeout(() => { btn.textContent = "Create booking"; }, 1200); });
+}
+function initLogin(root) {
+  const f = $("#login-form", root);
+  $("[data-pw]", root).addEventListener("click", (e) => { const i = $("#lg-pw", root), s = i.type === "password"; i.type = s ? "text" : "password"; e.currentTarget.setAttribute("aria-label", s ? "Hide password" : "Show password"); });
+  f.addEventListener("submit", (e) => { e.preventDefault(); if (!validate(f)) return; const st = $(".status-msg", f); st.textContent = "Design preview — sign-in connects to the Go Green Plus portal in the live site."; st.classList.add("show"); });
+}
+
+/* ---------- global interactions ---------- */
+function moveGlide(el) {
+  const g = $(".nav-glide"), track = $(".nav-track"); if (!g || !track) return;
+  if (!el || !el.offsetWidth) { g.style.opacity = 0; return; }
+  let x = 0, n = el; while (n && n !== track) { x += n.offsetLeft; n = n.offsetParent; }
+  g.style.width = el.offsetWidth + "px"; g.style.transform = `translateX(${x}px)`; g.style.opacity = 1;
+}
+const activeNavEl = () => $(".nav-track [data-nav][aria-current='page']");
+function initChrome() {
+  const items = $$(".nav-item");
+  const close = () => items.forEach((it) => { it.classList.remove("is-open"); $("button", it).setAttribute("aria-expanded", "false"); });
+  items.forEach((it) => {
+    const b = $("button", it); let t;
+    const open = (v) => { if (v) close(); it.classList.toggle("is-open", v); b.setAttribute("aria-expanded", v); };
+    b.addEventListener("click", () => open(!it.classList.contains("is-open")));
+    if (matchMedia("(hover: hover)").matches) { it.addEventListener("mouseenter", () => { clearTimeout(t); open(true); }); it.addEventListener("mouseleave", () => { t = setTimeout(() => open(false), 160); }); }
+  });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".nav-item")) close(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { close(); closeDrawer(); } });
+  const track = $(".nav-track");
+  $$(".nav-a", track).forEach((a) => a.addEventListener("mouseenter", () => moveGlide(a)));
+  track.addEventListener("mouseleave", () => moveGlide(activeNavEl()));
+  addEventListener("resize", () => moveGlide(activeNavEl()));
+  const tog = $(".nav-toggle"), dr = $("#drawer");
+  tog.addEventListener("click", () => { const o = !dr.classList.contains("is-open"); dr.classList.toggle("is-open", o); tog.setAttribute("aria-expanded", o); tog.innerHTML = ic(o ? "close" : "menu"); document.body.style.overflow = o ? "hidden" : ""; });
+  const shell = $("#site-header"), bar = $(".progress");
+  const onScroll = () => { shell.classList.toggle("is-scrolled", scrollY > 24); const h = document.documentElement.scrollHeight - innerHeight; bar.style.transform = `scaleX(${h > 0 ? Math.min(1, scrollY / h) : 0})`; };
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  shell.addEventListener("transitionend", () => moveGlide(activeNavEl()));
+  if (window.ResizeObserver) new ResizeObserver(() => moveGlide(activeNavEl())).observe(track);
+  /* hero parallax + tile spotlight */
+  if (!REDUCED) {
+    document.addEventListener("pointermove", (e) => {
+      const h = e.target.closest && e.target.closest("[data-parallax]");
+      if (h) { const r = h.getBoundingClientRect(); h.style.setProperty("--mx", ((e.clientX - r.left) / r.width - .5) * 2); h.style.setProperty("--my", ((e.clientY - r.top) / r.height - .5) * 2); }
+      const t = e.target.closest && e.target.closest(".tile");
+      if (t) { const r = t.getBoundingClientRect(); t.style.setProperty("--px", e.clientX - r.left + "px"); t.style.setProperty("--py", e.clientY - r.top + "px"); }
+    }, { passive: true });
+  }
+  $(".skip-link").addEventListener("click", (e) => { e.preventDefault(); $("#app").focus(); });
+}
+function closeDrawer() { const dr = $("#drawer"), t = $(".nav-toggle"); dr.classList.remove("is-open"); if (t) { t.setAttribute("aria-expanded", "false"); t.innerHTML = ic("menu"); } document.body.style.overflow = ""; }
+
+/* ==========================================================================
+   Router
+   ========================================================================== */
+const ALIAS = {
+  "/product-and-services": "/services", "/solutions": "/services", "/corporate-responsibility": "/responsibility", "/community-impact": "/impact",
+  "/careers": "/careers/job-search", "/careers/students/internships": "/careers/internships", "/careers/students/events": "/careers/events",
+  "/dashboard": "/book", "/contact": "/book", "/book-now": "/book",
+};
+const ROUTES = [
+  [/^\/$/, () => V.home()],
+  [/^\/services$/, () => V.services()],
+  [/^\/(?:services|product|solutions)\/([\w-]+)$/, (m) => V.product(m[1])],
+  [/^\/responsibility$/, () => V.responsibility()],
+  [/^\/impact$/, () => V.soon("Community Impact", "impact")],
+  [/^\/media$/, () => V.soon("Media", "")],
+  [/^\/about$/, () => V.about()],
+  [/^\/about\/([\w-]+)$/, (m) => V.profile(m[1])],
+  [/^\/careers\/([\w-]+)$/, (m) => V.careers(m[1])],
+  [/^\/book$/, () => V.book()],
+  [/^\/login$/, () => V.login()],
+];
+let first = true;
+function render() {
+  let path = (location.hash.replace(/^#/, "") || "/").replace(/\/+$/, "") || "/";
+  if (ALIAS[path]) path = ALIAS[path];
+  const hit = ROUTES.find(([re]) => re.test(path));
+  const view = hit ? hit[1](path.match(hit[0])) : V.notFound();
+  cleanups.forEach((f) => f()); cleanups = [];
+  const app = $("#app");
+  app.innerHTML = view.html;
+  document.title = view.title;
+  $("#site-footer").hidden = !!view.noFooter;
+  $$("[data-nav]").forEach((a) => a.dataset.nav === view.nav ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+  $$(".nav-item").forEach((it) => { it.classList.remove("is-open"); $("button", it).setAttribute("aria-expanded", "false"); });
+  closeDrawer();
+  document.documentElement.classList.toggle("anim", first && view.nav === "home" && !REDUCED);
+  (view.after || []).forEach((fn) => fn(app));
+  let j = null; try { j = sessionStorage.getItem("gg-jump"); sessionStorage.removeItem("gg-jump"); } catch (_) { j = window.__j; window.__j = null; }
+  if (j) requestAnimationFrame(() => setTimeout(() => jumpTo(j, false), 40)); else scrollTo(0, 0);
+  requestAnimationFrame(() => moveGlide(activeNavEl()));
+  if (!first) app.focus({ preventScroll: true });
+  first = false;
+}
+function router() {
+  if (!first && document.startViewTransition && !REDUCED) document.startViewTransition(render);
+  else render();
+}
+document.addEventListener("DOMContentLoaded", () => {
+  renderHeader(); renderFooter(); initChrome(); router();
+  addEventListener("hashchange", router);
+  if (document.fonts) document.fonts.ready.then(() => moveGlide(activeNavEl()));
+});
+
+</script>
+</body>
+</html>
